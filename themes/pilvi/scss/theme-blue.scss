@@ -1,0 +1,33 @@
+/*!
+ * Pilvi Platform Theme
+ * based on dauxio default theme
+ * https://dauxio.github.io/
+ * MIT License
+ */
+@import "theme.scss";
+
+//Pilvi Platform Doc Blue
+:root {
+    --pilvi-blue: #30adea;
+    --pilvi-blue-dark: #34495e;
+    --sidebar-background: #f7f7f7;
+    --sidebar-link-active-background: #c5c5cb;
+    --dark: var(--pilvi-blue-dark);
+    --light: #82becd;
+    --text: #404040;
+    --link-color: var(--pilvi-blue);
+    --brand-background: var(--pilvi-blue);
+    --brand-color: #fff;
+    --sidebar-background: #f9fafb;
+    --sidebar-link-active-background: #e0e0e0;
+    --homepage-navbar-background: var(--pilvi-blue);
+    --homepage-hero-background: #fff;
+    --homepage-hero-color: var(--pilvi-blue-dark);
+}
+
+@media screen and (min-width: 769px) {
+    body {
+        //Needed only for floating code blocks
+        background-color: var(--dark);
+    }
+}
