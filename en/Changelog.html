@@ -84,6 +84,45 @@
 
     <div class="s-content">
         <p>Pilvi Platform Changelog</p>
+<h2 id="page_2018-08-08">(2018-08-08)</h2>
+<p>Changes T88</p>
+<ul>
+<li>Added Site specific numbering for top level objects (Services,Profile,Product,Orders,Invoices)</li>
+<li>Renamed (Account) Credits to Account Balance.</li>
+<li>Usage based billing now adds to Account Debt, which needs to be paid off using Account Balance or other payment methods</li>
+<li>Revised Service lifetime states and process.
+<ul>
+<li>New states:</li>
+<li>WAITING_ACTIVATION, when Service is created but the Order is not yet paid</li>
+<li>EXPIRED, when Service has passed its expiration time</li>
+<li>DISPATCHED, for One-time purchase products. Services are not active after the initial activation.</li>
+</ul>
+</li>
+<li>Revised Action Rules for all Sites to reflect the changes in Service lifetime process.</li>
+<li>New default message templates to reflect the changes in Service lifetime process</li>
+<li>
+<strong>Shop</strong>: Background changes for the checkout process. Services are now activated behind the scenes when the payment is received.</li>
+<li>
+<strong>Shop</strong>: Added an option for ordering with an Invoice. Invoice needs to be paid through the Console to activate the Services.</li>
+<li>
+<strong>Console</strong>: Added new top level listings for Orders, Invoices, Contracts</li>
+<li>
+<strong>Console</strong> Added the ability to pay Invoices using a Credit Card (Stripe). Invoices may also be paid using the Account Balance.</li>
+<li>
+<strong>Console</strong>: Invoice is automatically created for the next period if the Service is set to be continued</li>
+<li>
+<strong>Manager</strong>: Added new top level listings for Orders, Invoices, Contracts</li>
+<li>
+<strong>Manager</strong>: Product Pricing options Free and One-time combined to a new option called &quot;One-time Purchase&quot;. Services created from a One-time Purchase products are provisioned and not managed by Pilvi Platfrom after that.</li>
+</ul>
+<p>Other changes</p>
+<ul>
+<li>T83 Site Administrator can now enable the following analytics: Google Analytics, Google Tag Manager, Facebook Pixel.</li>
+</ul>
+<p>Fixes</p>
+<ul>
+<li>a lot of small fixes here and there</li>
+</ul>
 <h2 id="page_2018-05-24">(2018-05-24)</h2>
 <p>Changes</p>
 <ul>

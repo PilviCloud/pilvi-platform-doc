@@ -103,6 +103,9 @@
 <li>
 <p><a href="#page_UI-and-Features">UI and Features</a></p>
 </li>
+<li>
+<p><a href="#page_Analytics">Analytics</a></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -110,11 +113,14 @@
 </ul>    </div>
 </div>
 <p>Preferences define the configuration of your Site. By altering Preference values, you can alter the behaviour of your Site. Some Preferences provide only read-only information and are not editable by you.</p>
-<p>Different values a Preferences may have:</p>
+<p>Preference value types are one of the following:</p>
 <ul>
-<li>STRING</li>
-<li>NUMBER</li>
-<li>BOOLEAN</li>
+<li>
+<strong>STRING</strong>. Text value.</li>
+<li>
+<strong>NUMBER</strong>. Numeric value.</li>
+<li>
+<strong>BOOLEAN</strong>. Checkbox toggle.</li>
 </ul>
 <h2 id="page_List-of-editable-Preferences">List of editable Preferences</h2>
 <h3 id="page_General">General</h3>
@@ -275,6 +281,58 @@
 <td>PAYMENT_METHOD_STRIPE_ENABLED</td>
 <td>BOOLEAN</td>
 <td>Show Stripe as a payment option</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_Analytics">Analytics</h3>
+<table>
+<thead>
+<tr>
+<th>Preference Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_GOOGLE_ANALYTICS_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable Google Analytics tracking.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_GOOGLE_ANALYTICS_ID</td>
+<td>STRING</td>
+<td>Tracking code for Google Analytics.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_GOOGLE_TAG_MANAGER_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable Google Tag Manager.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_GOOGLE_TAG_MANAGER_ID</td>
+<td>STRING</td>
+<td>TrackId for Google Tag Manager.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_FACEBOOK_PIXEL_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable Facebook Pixel tracking.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_FACEBOOK_PIXEL_ID</td>
+<td>STRING</td>
+<td>PixelID for Facebook Pixel.</td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_PILVI_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable Pilvi Analytics tracking. <em>Planned</em></td>
+</tr>
+<tr>
+<td>ANALYTICS_INTEGRATIONS_PILVI_ID</td>
+<td>STRING</td>
+<td>Pilvi Tracking  for Facebook Pixel. <em>Planned</em></td>
 </tr>
 </tbody>
 </table>
