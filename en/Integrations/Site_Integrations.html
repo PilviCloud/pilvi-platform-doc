@@ -3,7 +3,7 @@
 <head>
     <title>Site Integrations - Pilvi Platform Documentation</title>
     <meta name="description" content="Your SaaS Sales, Automated">
-    <meta name="author" content="Foo">
+    <meta name="author" content="Pilvi Team">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -49,13 +49,13 @@
 
             <div class="Links">
                                     <hr/>
-                                            <a href="http://pilvi.com" target="_blank">Pilvi</a>
-                        <br />
-                                            <a href="http://developer.pilvi.com" target="_blank">Developer Site</a>
-                        <br />
                                             <a href="https://pilvicloud.github.io/pilvi-platform-doc/en/Overview.html" target="_blank">in English</a>
                         <br />
                                             <a href="https://pilvicloud.github.io/pilvi-platform-doc/fi/Overview.html" target="_blank">in Finnish</a>
+                        <br />
+                                            <a href="http://developer.pilvi.com" target="_blank">Developer Site</a>
+                        <br />
+                                            <a href="http://pilvi.com" target="_blank">Pilvi Cloud Company Site</a>
                         <br />
                                                 </div>
 
@@ -67,6 +67,9 @@
                                             </div>
                 
                 
+                                    <div class="PoweredBy">
+                        <hr/>
+                        © 2018 Pilvi Cloud Company Ltd                    </div>
                         </div>
     </aside>
     <div class="Columns__right Columns__right--full">
@@ -77,29 +80,58 @@
     <div class="Page__header">
         <h1><a href="../../en/Integrations/Service_Integrations.html">Integrations</a> <svg class="Page__header--separator" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 477.175 477.175"><path d="M360.73 229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1 0s-5.3 13.8 0 19.1l215.5 215.5-215.5 215.5c-5.3 5.3-5.3 13.8 0 19.1 2.6 2.6 6.1 4 9.5 4 3.4 0 6.9-1.3 9.5-4l225.1-225.1c5.3-5.2 5.3-13.8.1-19z"/></svg> <a href="../../en/Integrations/Site_Integrations.html">Site Integrations</a></h1>
                         <span class="EditOn">
-            <a href="https://github.com/PilviCloud/pilvi-platform-doc/en/10_Integrations/Site_Integrations.md" target="_blank">
+            <a href="https://github.com/PilviCloud/pilvi-platform-doc/blob/master/docs/en/10_Integrations/Site_Integrations.md" target="_blank">
                 Edit on GitHub            </a>
         </span>
             </div>
 
     <div class="s-content">
-        <h1 id="page_Site-Integrations">Site Integrations</h1>
+        <div class="TableOfContentsContainer">
+    <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
+    <div class="TableOfContentsContainer__content">
+        <ul class="TableOfContents">
+<li>
+<p><a href="#page_Zapier">Zapier</a></p>
+</li>
+<li>
+<p><a href="#page_Analytics">Analytics</a></p>
+</li>
+</ul>    </div>
+</div>
 <p>Site integrations allow you to integrate your Site into external services to extend with additional functionalities.</p>
-<h2 id="page_Zapier">Zapier</h2>
-<p>Zapier integration allows any user from zapier.com receive data (by trigger each 15 minutes) about Pilvi new Services, Products and (Customer) Profiles.</p>
-<p>For authentication, the user at zapier.com selects the Pilvi app when creating Zapier Zap at zapier.com and provides Pilvi's values for:</p>
-<ul>
-<li>Site identifier</li>
-<li>API key</li>
-<li>API domain</li>
-</ul>
-<p>The values for those fields can be generated and copied at each Pilvi Site: Manager -&gt; System -&gt; Zapier Integration
-Currently supported Zapier Triggers for getting Pilvi data are:</p>
+<h1 id="page_Zapier">Zapier</h1>
+<p>Zapier integration allows any user from zapier.com to receive data (by a trigger every 15 minutes) about new Pilvi Services, Products and (Customer) Profiles.</p>
+<p>Currently supported Zapier Triggers for getting Pilvi data are:</p>
 <ul>
 <li>New Service</li>
 <li>New Product</li>
 <li>New Customer Profile</li>
 </ul>
+<p>To setup Zapier integration with Pilvi, you need to create a Zapier Zap at zapier.com, and use Pilvi app in the Zap.</p>
+<p>To use the Pilvi Zapier app, you need to provide the following authentication details:</p>
+<ul>
+<li>Site identifier</li>
+<li>API key</li>
+<li>API domain (use the default)</li>
+</ul>
+<p>The values for these fields need be created on Pilvi Platform, and copied into Zapier:</p>
+<p>To create or check the API key, in Manager</p>
+<blockquote>
+<ol>
+<li>From under the 'System' side menu item, open Zapier Integration page.</li>
+<li>Click &quot;Create new Zapier API key&quot; button.</li>
+<li>Copy API key and Site identifier into Zapier</li>
+</ol>
+</blockquote>
+<hr />
+<h1 id="page_Analytics">Analytics</h1>
+<p>Currently supported analytics providers</p>
+<ul>
+<li>Google Analytics</li>
+<li>Google Tag Manager</li>
+<li>Facebook Pixel</li>
+</ul>
+<p>For information on how to enable 3rd party analytics, see <a href="../Managing_Pilvi™/Analytics.html">Managing Pilvi™ - Analytics page</a></p>
     </div>
 
         <nav>
