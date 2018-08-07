@@ -86,23 +86,40 @@
             </div>
 
     <div class="s-content">
-        <p>Purchased Products will become visible on the Console, as Services.</p>
-<div class="TableOfContentsContainer">
+        <div class="TableOfContentsContainer">
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_Service-states">Service states</a></p>
+<p><a href="#page_States">States</a></p>
 </li>
 <li>
+<p><a href="#page_Trial-period">Trial period</a></p>
+</li>
+<li>
+<p><a href="#page_Cancellation">Cancellation</a></p>
+</li>
+<li>
+<p><a href="#page_Renewal">Renewal</a></p>
+<ul class="TableOfContents">
+<li>
 <p><a href="#page_Auto-renew">Auto-renew</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_Expiration">Expiration</a></p>
+</li>
+<li>
+<p><a href="#page_Discontinuation">Discontinuation</a></p>
 </li>
 <li>
 <p><a href="#page_Contracts">Contracts</a></p>
 </li>
 </ul>    </div>
 </div>
-<h2 id="page_Service-states">Service states</h2>
+<p>Purchased Products will become visible on the Console, as Services.</p>
+<h1 id="page_States">States</h1>
 <p>At any particular time, a Service is in one of the following states:</p>
 <table>
 <thead>
@@ -146,11 +163,25 @@
 </tr>
 </tbody>
 </table>
+<h1 id="page_Trial-period">Trial period</h1>
+<p>When Service trial period is nearing its end, an Invoice is created for the first billed period of the Service if auto-renew is enabled. If the Invoice was created, the payment is tried on the due date (Service expiration date), and on succesful payment the Service is renewed for the next period.</p>
+<h1 id="page_Cancellation">Cancellation</h1>
+<p>You may cancel a Service by disabling the auto-renew for it.</p>
+<p>To cancel a Service from the Console, proceed to the page of the Service that you'd like to cancel, and click on the 'Discontinue Service' button.</p>
+<p>If you still decide to continue to use the Service before it has been discontinued, you can click on the 'Continue Service' from the page of the Service. This will result in the creation of new Invoice that can be paid to renew the Service for the next period.</p>
+<h1 id="page_Renewal">Renewal</h1>
+<p>Services are renewed by paying an Invoice that was created for the next billing period. Invoices are created before the Service expires, on the Service expiration date at the latest. Invoice creation times may vary between Sites.</p>
 <h2 id="page_Auto-renew">Auto-renew</h2>
-<p>Services that have auto-renew enabled are automatically renewed for the next period. Services that have been canceled (auto-renew disabled) will be excluded from the next periods Invoice, thus they will expire at the ends of the current period.</p>
+<p>Services that have auto-renew enabled are automatically renewed for the next period (included on the next Invoice). Services that have been canceled (auto-renew disabled) will be excluded from the next periods Invoice, thus they will expire at the end of the current period.</p>
 <p>If you cancel a Service that has already been included in an Invoice for the next period, the Invoice will be reimbursed and a new Invoice reflecting the new state of the Contract will be created at a later time.</p>
-<h2 id="page_Contracts">Contracts</h2>
-<p>Contracts are used for grouping one or more Service into one single Invoice. Services in the same Contract are renewed at the same time, and follow the same billing interval.</p>
+<h1 id="page_Expiration">Expiration</h1>
+<p>Services will be expired when their expiration time is in the past.</p>
+<p>After the expiration date has passed, the Service may be put into EXPIRED state. The time period between the Service expiration time and the time the Service is put to EXPIRED state may vary between environments. While the Service is in EXPIRED state, it may still be renewed by paying the appropriate Invoice.</p>
+<h1 id="page_Discontinuation">Discontinuation</h1>
+<p>Services will be discontinued when they have been in EXPIRED state for a predefined amount of time.</p>
+<p>This time period varies between Sites. When the Service is put to DISCONTINUED state, it cannot be renewed or restored.</p>
+<h1 id="page_Contracts">Contracts</h1>
+<p>Contracts are used for grouping one or more Service. Services in the same Contract are renewed at the same time, and follow the same billing interval.</p>
     </div>
 
         <nav>
