@@ -102,6 +102,23 @@
 </li>
 </ul>
 </li>
+<li>
+<p><a href="#page_section_4">System Pages</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_section_5">Default contents</a></p>
+</li>
+<li>
+<p><a href="#page_section_6">System Page Variables</a></p>
+</li>
+<li>
+<p><a href="#page_section_7">Sections</a></p>
+</li>
+<li>
+<p><a href="#page_section_8">Examples</a></p>
+</li>
+</ul>
+</li>
 </ul>    </div>
 </div>
 <p>Simple web pages can be created by the Site admin.</p>
@@ -180,12 +197,71 @@ See list of available variables below:</p>
 <td>site.domain</td>
 <td>Site domain. ex. my-shop.saas.pilvi.com</td>
 </tr>
+<tr>
+<td>user.email</td>
+<td>User email when the user is logged in</td>
+</tr>
 </tbody>
 </table>
 <h2 id="page_section_3">Side menu links</h2>
 <p>Side menu links may be added for privacy-policy, terms-of-use and contact Pages.</p>
 <p>See <a href="Preferences.html">Preferences</a> starting with <code>FRONTEND_SIDEMENU_LINK_</code>.</p>
 <p><img src="../../images/side_menu_footer_links.png" alt="" /></p>
+<h1 id="page_section_4">System Pages</h1>
+<p>Many System Pages can be customized by the Site admin. For example Product Detail, Product Configure, Login, Register, and Cart pages are supported. Each System Page can have several System Page Blocks, typically a Top and a Bottom block. The Top block is located just below the header and the Bottom block below the other content.</p>
+<p>The contents of the System Page Blocks can be edited in Manager as localized WYSIWYG fields.</p>
+<h2 id="page_section_5">Default contents</h2>
+<p>Some of the System Page Blocks have default contents. These contents can be edited similarly to any block.</p>
+<h2 id="page_section_6">System Page Variables</h2>
+<p>Variables can be used in System Page Blocks in the same way as in Pages. In addition to the Pages variables, System Pages may have page specific variables available. On Product Configure and Product Detail pages the following variables are available:</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Where the Value comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>product.id</td>
+<td>The current product ID</td>
+</tr>
+<tr>
+<td>product.no</td>
+<td>The current product number</td>
+</tr>
+<tr>
+<td>product.name</td>
+<td>The current product localized name</td>
+</tr>
+<tr>
+<td>product.plan</td>
+<td>The current product localized plan</td>
+</tr>
+</tbody>
+</table>
+<h2 id="page_section_7">Sections</h2>
+<p>A System Page Block may contain sections, which visibility depends on the section variable values. The system defines these section variables on some of the System Pages. A section consists of section start, content, and section end. For example:</p>
+<pre><code>{{#section.order_fail}}
+Oops, something went wrong
+{{/section.order_fail}}
+</code></pre>
+<p>The text is included only if variable section.order_fail value is true. Sections may be nested.</p>
+<p>For example Cart Ready page defines sections:</p>
+<ul>
+<li>section.order_success
+<ul>
+<li>section.order_payment_received</li>
+<li>section.order_payment_invoice</li>
+<li>section.order_payment_not_needed</li>
+<li>section.order_payment_fail</li>
+</ul>
+</li>
+<li>section.order_failed</li>
+</ul>
+<p>On this page, when section.order_success is true, the order was created. Only one of the sections inside order_success is true.</p>
+<h2 id="page_section_8">Examples</h2>
+<p>See the default System Page Block contents, for example Product Configure Top block. For more advanced example, see Cart Ready Top block.</p>
     </div>
 
         <nav>

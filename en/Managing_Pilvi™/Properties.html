@@ -113,7 +113,24 @@
 <p><a href="#page_section_4">Product Properties</a></p>
 </li>
 <li>
-<p><a href="#page_section_5">Customer Properties (Coming soon)</a></p>
+<p><a href="#page_section_5">Profile Properties</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_section_6">Adding New Profile Properties</a></p>
+</li>
+<li>
+<p><a href="#page_section_7">Required</a></p>
+</li>
+<li>
+<p><a href="#page_section_8">Accessibility in Shop/Console/Manager</a></p>
+</li>
+<li>
+<p><a href="#page_section_9">Show for (Profile Type)</a></p>
+</li>
+<li>
+<p><a href="#page_section_10">Position</a></p>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -124,15 +141,19 @@
 <p>Property has a value type, that cannot be altered after its creation:</p>
 <ul>
 <li>
-<strong>BOOLEAN</strong>. Yes/No toggle. Shown in the UI as a checkbox.</li>
+<strong>Checkbox</strong>. Yes/No toggle. Shown in the UI as a checkbox.</li>
 <li>
-<strong>STRING</strong>. Text value. Shown in the UI as a text input field.</li>
+<strong>Text</strong>. Text value. Shown in the UI as a text input field.</li>
 <li>
-<strong>STRING_OPTION</strong>. Text option. Shown in the UI as a selectbox.</li>
+<strong>Selectbox</strong>. Text option. Shown in the UI as a selectbox.</li>
 <li>
-<strong>NUMBER</strong>. Numeric value. Shown in the UI as a number input field.</li>
+<strong>Number</strong>. Numeric value. Shown in the UI as a number input field.</li>
 <li>
-<strong>NUMBER_RANGE</strong>. Numeric value from a certain range. Shown in the UI as a slider.</li>
+<strong>Number Range</strong>. Numeric value from a certain range. Shown in the UI as a slider.</li>
+<li>
+<strong>Textarea</strong>. Multiple lines of text. Shown in the UI as a textarea input field.</li>
+<li>
+<strong>Date</strong>. Date value with month, day, and year. Shown in the UI as a date picker.</li>
 </ul>
 <h2 id="page_section_2">Property validations</h2>
 <p>Property values may also have an optional validation that restricts the value of the Property.</p>
@@ -183,10 +204,38 @@
 </tbody>
 </table>
 <h1 id="page_section_3">Property categories</h1>
-<p>Properties are divided into to categories: <strong>Product</strong> and <strong>Customer</strong>.</p>
+<p>Properties are divided into to categories: <strong>Product</strong> and <strong>Profile</strong>.</p>
 <h2 id="page_section_4">Product Properties</h2>
 <p>Product Properties define a Product.</p>
-<h2 id="page_section_5">Customer Properties (Coming soon)</h2>
+<h2 id="page_section_5">Profile Properties</h2>
+<p>Site Administrator can define and set the values of the Profile Properties in Manager. Profile Property values may be required from the user in Shop Sign Up and Shop Cart. User can also see and change the values in Console.</p>
+<p>In addition to the Property value type and validation, Site Administrator may set Profile Property attributes for the visibility, validation, helpers, and localizations.</p>
+<h3 id="page_section_6">Adding New Profile Properties</h3>
+<p>New Profile Properties can be added in Customers - Profile Properties. The name will be used by default for all the locales.</p>
+<h3 id="page_section_7">Required</h3>
+<p>If Required is set, User has to input a value before proceeding.</p>
+<h3 id="page_section_8">Accessibility in Shop/Console/Manager</h3>
+<p>Profile Property accessibility can be defined separately for Shop (Sign Up, Cart), Console (User Settings), and Manager (Customer Profiles). The accessibility options for each are:</p>
+<ul>
+<li>
+<strong>Hidden</strong>. Profile Property is not visible.</li>
+<li>
+<strong>Visible</strong>. Profile Property value is shown.</li>
+<li>
+<strong>Editable</strong>. Profile Property value is visible and may be edited.</li>
+</ul>
+<h3 id="page_section_9">Show for (Profile Type)</h3>
+<p>Profile Property access can be further limited based on the profile type.</p>
+<ul>
+<li>
+<strong>Person</strong>. User with the profile type Person can see/edit the property.</li>
+<li>
+<strong>Business</strong>. User with the profile type Business can see/edit the property.</li>
+<li>
+<strong>All</strong>. Both Person and Business users can see/edit the property.</li>
+</ul>
+<h3 id="page_section_10">Position</h3>
+<p>Position number can be used to sort Profile Properties on the forms in ascending order. The default is 0. Note that properties with the same position number are not in any specific order within that position.</p>
     </div>
 
         <nav>
