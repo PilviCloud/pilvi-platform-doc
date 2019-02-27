@@ -94,7 +94,7 @@
 <p><a href="#page_section_1">Default Action Rule Preset</a></p>
 </li>
 <li>
-<p><a href="#page_section_2">Available Conditions</a></p>
+<p><a href="#page_section_2">Conditions</a></p>
 <ul class="TableOfContents">
 <li>
 <p><a href="#page_section_3">Primary conditions</a></p>
@@ -105,15 +105,7 @@
 </ul>
 </li>
 <li>
-<p><a href="#page_section_5">Available Functions</a></p>
-<ul class="TableOfContents">
-<li>
-<p><a href="#page_section_6">Primary functions</a></p>
-</li>
-<li>
-<p><a href="#page_section_7">Secondary functions</a></p>
-</li>
-</ul>
+<p><a href="#page_section_5">Functions</a></p>
 </li>
 </ul>    </div>
 </div>
@@ -159,7 +151,7 @@ You can of course alter it as you see fit.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_2">Available Conditions</h1>
+<h1 id="page_section_2">Conditions</h1>
 <h2 id="page_section_3">Primary conditions</h2>
 <table>
 <thead>
@@ -167,6 +159,7 @@ You can of course alter it as you see fit.</p>
 <th>Name</th>
 <th>Triggers</th>
 <th>Additional parameters</th>
+<th>Contains contexts</th>
 </tr>
 </thead>
 <tbody>
@@ -174,66 +167,79 @@ You can of course alter it as you see fit.</p>
 <td>LOGIN_FROM_NEW_IP</td>
 <td>Immediately</td>
 <td></td>
+<td><code>User</code></td>
 </tr>
 <tr>
 <td>USER_CREATED</td>
 <td>Immediately</td>
 <td></td>
+<td><code>User</code></td>
 </tr>
 <tr>
 <td>ORDER_CREATED</td>
 <td>Immediately</td>
 <td></td>
+<td><code>User</code> <code>Profile</code> <code>Order</code></td>
 </tr>
 <tr>
 <td>SERVICE_EXPIRED</td>
 <td>Immediately</td>
 <td></td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_CANCELED</td>
 <td>Immediately</td>
 <td></td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_DISCONTINUED</td>
 <td>Immediately</td>
 <td></td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_EXPIRES_IN</td>
 <td>Scheduled (once a day)</td>
 <td>NUMBER</td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_HAS_BEEN_EXPIRED_FOR</td>
 <td>Scheduled (once a day)</td>
 <td>NUMBER</td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_CREATION</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_TRIAL_END</td>
 <td>Scheduled</td>
 <td></td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_TRIAL_START</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_TILL_SERVICE_TRIAL_END</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
+<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_SINCE_USERS_LAST_LOGIN_TO_PILVI_PLATFORM</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
+<td><code>User</code></td>
 </tr>
 </tbody>
 </table>
@@ -264,22 +270,6 @@ You can of course alter it as you see fit.</p>
 <td></td>
 </tr>
 <tr>
-<td>X_TIME_UNITS_FROM_SERVICE_CREATION_DAYS</td>
-<td></td>
-</tr>
-<tr>
-<td>X_TIME_UNITS_FROM_SERVICE_TRIAL_START_DAYS</td>
-<td></td>
-</tr>
-<tr>
-<td>X_TIME_UNITS_SINCE_USERS_LAST_LOGIN_TO_PILVI_PLATFORM_DAYS</td>
-<td></td>
-</tr>
-<tr>
-<td>X_TIME_UNITS_TILL_SERVICE_TRIAL_END_DAYS</td>
-<td></td>
-</tr>
-<tr>
 <td>RECURRING_PAYMENT_INFORMATION_IS_FILLED</td>
 <td></td>
 </tr>
@@ -289,51 +279,35 @@ You can of course alter it as you see fit.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_5">Available Functions</h1>
-<h2 id="page_section_6">Primary functions</h2>
+<h1 id="page_section_5">Functions</h1>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Additional parameters</th>
+<th>Required contexts</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>SEND_ORDER_CONFIRMATION_EMAIL_TO_PROVIDER</td>
+<td>SEND_EMAIL_TO_ADDRESS</td>
 <td>EMAIL</td>
-</tr>
-<tr>
-<td>SEND_ORDER_CONFIRMATION_EMAIL_TO_CUSTOMER</td>
-<td></td>
+<td>None</td>
 </tr>
 <tr>
 <td>SEND_EMAIL_TO_USER</td>
 <td></td>
+<td><code>User</code></td>
 </tr>
 <tr>
 <td>SEND_EMAIL_TO_PROFILE_ADMINS</td>
 <td></td>
+<td><code>Profile</code> or <code>Service</code></td>
 </tr>
 <tr>
-<td>SEND_EMAIL_TO_SERVICES_PROFILE_ADMINS</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="page_section_7">Secondary functions</h2>
-<p><strong>May only be used with Primary conditions</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Additional parameters</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WITH_TEMPLATE</td>
-<td>NUMBER</td>
+<td>SEND_WEBHOOK_CALL</td>
+<td>ENDPOINT</td>
+<td>None</td>
 </tr>
 </tbody>
 </table>
