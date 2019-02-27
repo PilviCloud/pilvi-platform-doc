@@ -1,0 +1,369 @@
+swagger: '2.0'
+info:
+  title: Pilvi Platfrom Webhook specification DRAFT
+  description: |
+
+    Webhooks allow you to receive notifications from events that occur on the Pilvi Platform.
+
+    When a webhook is triggered, Pilvi Platform will send a HTTP POST payload to a specified URL.
+
+    The content of the payload is determined by the source which triggered the Webhook.
+
+    This specification describes the format that Pilvi Platform uses when performing Webhook calls.
+
+    # Request validation
+
+    With each incoming request coming from the Pilvi Platform, a token will be passed in the headers as `token`.
+    This token may be used to validate that the request came from Pilvi. The value of the token may be defined and changed on the Pilvi Platform. 
+    
+
+  version: "1.0-20190227"
+# the domain of the service
+host: your-host.com
+# array of all schemes that your API supports
+schemes:
+  - https
+produces:
+  - application/json
+security: [ { token: [] } ]
+securityDefinitions:
+  token:
+    type: apiKey
+    name: token
+    in: header
+paths:
+  /your-endpoint:
+    post:
+      summary: Endpoint for receiving HTTP Webhook calls
+      operationId: receiveWebhook
+      description: |
+        This endpoint receives a webhook call from Pilvi Platform.
+      parameters:
+        - name: body
+          in: body
+          description: Payload of the Webhook.
+          required: true
+          schema:
+            $ref: '#/definitions/WebhookPayload' 
+      tags:
+        - Webhook
+      responses:
+        200:
+          description: Request received successfully.
+        201:
+          description: Request received successfully.
+        400:
+          description: Request not received. Retrying later.
+        401:
+          description: Request not received. Retrying later.
+        404:
+          description: Request not received. Retrying later.
+        410:
+          description: Request not received. No retries.
+        500:
+          description: Request not received. Retrying later.
+definitions:
+  WebhookPayload:
+    type: object
+    required: [ id, version, timestamp, source, content ]
+    properties:
+      id:
+        type: string
+        description: Unique string for identifying the request
+        example: "ar_123456789"
+      version:
+        type: string
+        enum: ["1.0"]
+        description: Version number of the Webhook format.
+      timestamp:
+        type: string
+        format: date-time
+        description: ISO 8601 formatted timestamp of Webhook event creation.
+      source:
+        type: string
+        enum: ["action_rule", "event"]
+        description: |
+          Source of the request
+      content:
+        $ref: '#/definitions/WebhookContent'
+  WebhookContent:
+    type: object
+    properties:
+      user:
+        $ref: '#/definitions/ContentUser'
+      profile:
+        $ref: '#/definitions/ContentProfile'
+      service:
+        $ref: '#/definitions/ContentService'
+      order:
+        $ref: '#/definitions/ContentOrder'
+      contract:
+        $ref: '#/definitions/ContentContract'
+      product:
+        $ref: '#/definitions/ContentProduct'
+  ContentUser:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform User ID. Unique within the environment.
+        example: 1
+      email:
+        type: string
+        format: email
+        description: Email address of the User.
+        example: "firstname.lastname@example.com"
+      name:
+        type: string
+        description: Full name of the User.
+        example: "Firstname Lastname"
+      firstname:
+        type: string
+        description: First name of the User.
+        example: "Firstname"
+      lastname:
+        type: string
+        description: Last name of the User.
+        example: "Lastname"
+
+  ContentProfile:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform Profile ID. Unique within the environment.
+        example: 1
+      no:
+        type: integer
+        description: Pilvi Platform Profile Number. Unique within the Site.
+        example: 1
+      name:
+        type: string
+        description: Name of the Profile.
+        example: "My Profile Name"
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/ProfileProperties'
+      services:
+        type: array
+        items:
+          $ref: '#/definitions/ContentService'
+
+  ProfileProperties:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Unique Name of the Property
+        example: "site-1-my.property.a"
+      value:
+        type: string
+        description: Value of the Property
+        examples: 
+         text:
+          value: "Example value"
+          summary: Text formatted value
+         number:
+          value: "1.50"
+          summary: Number formatted value
+         boolean:
+          value: "true"
+          summary: Boolean formatted value
+         date:
+          value: "2019-01-01"
+          summary: Date formatted value
+         file_base64:
+          value: "RXhhbXBsZSBGaWxlIENvbnRlbnQ="
+          summary: Base64 formatted value of a file
+  ContentService:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform Service ID. Unique within the environment.
+        example: 1
+      no:
+        type: integer
+        description: Pilvi Platform Service Number. Unique within the Site.
+        example: 1
+      name:
+        type: string
+        description: Name of the Service.
+        example: "My Service 1"
+      url:
+        type: string
+        description: Service Page URL
+        example: "https://my-shop-address-on-pilvi-platform.com/console/services/1"
+      product:
+        $ref: '#/definitions/ContentProduct'
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/ServiceProperties'
+
+  ServiceProperties:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Unique Name of the Property
+        example: "seller-1-my.property.a"
+      value:
+        type: string
+        description: Value of the Property
+        examples: 
+         text:
+          value: "Example value"
+          summary: Text formatted value
+         number:
+          value: "1.50"
+          summary: Number formatted value
+         boolean:
+          value: "true"
+          summary: Boolean formatted value
+         date:
+          value: "2019-01-01"
+          summary: Date formatted value
+         file_base64:
+          value: "RXhhbXBsZSBGaWxlIENvbnRlbnQ="
+          summary: Base64 formatted value of a file
+
+  ContentProduct:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform Product ID. Unique within the environment.
+        example: 1
+      no:
+        type: integer
+        description: Pilvi Platform Product Number. Unique within the Site.
+        example: 1
+      name:
+        type: string
+        description: Name of the Product.
+        example: "Product A"
+      plan:
+        type: string
+        description: Plan name of the Product.
+        example: "Plan B"
+      properties:
+        type: array
+        items:
+          $ref: '#/definitions/ProductProperties'
+
+  ProductProperties:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Unique Name of the Property
+        example: "seller-1-my.property.a"
+      value:
+        type: string
+        description: Value of the Property
+        examples: 
+         text:
+          value: "Example value"
+          summary: Text formatted value
+         number:
+          value: "1.50"
+          summary: Number formatted value
+         boolean:
+          value: "true"
+          summary: Boolean formatted value
+         date:
+          value: "2019-01-01"
+          summary: Date formatted value
+         file_base64:
+          value: "RXhhbXBsZSBGaWxlIENvbnRlbnQ="
+          summary: Base64 formatted value of a file
+
+  ContentOrder:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform Order ID. Unique within the environment.
+        example: 1
+      no:
+        type: integer
+        description: Pilvi Platform Order Number. Unique within the Site.
+        example: 1
+      created:
+        type: string
+        format: date-time
+        description: ISO 8601 formatted timestamp of creation. 
+      total:
+        type: number
+        format: float
+        description: The total price of the Order. Without VAT.
+        example: 4.0242
+      totalwithvat:
+        type: number
+        format: float
+        description: The total price of the Order. With VAT.
+        example: 4.99
+      vat:
+        type: object
+        properties:
+          rate:
+            type: number
+            format: float
+            description: VAT rate percentage.
+            example: 24
+          amount:
+            type: number
+            format: float
+            description: Amount of VAT.
+            example: 0.9660
+      paymentmethod:
+        type: string
+        enum: ["stripe","invoice"]
+        description: Payment method
+        example: "invoice"
+      reference:
+        type: string
+        description: Customer reference
+        example: "Customer defined reference number"
+      additionalinfo:
+        type: string
+        description: Additional info
+        example: ""
+      products:
+        type: array
+        items:
+          $ref: '#/definitions/ContentProduct'
+
+  ContentContract:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: Pilvi Platform Order ID. Unique within the environment.
+        example: 1
+      no:
+        type: integer
+        description: Pilvi Platform Order Number. Unique within the Site.
+        example: 1
+      startdate:
+        type: string
+        format: date
+        description: ISO 8601 formatted date of contract start date. 
+      invoicedtill:
+        type: string
+        format: date
+        description: ISO 8601 formatted date of contract invoiced till date. 
+      paidtill:
+        type: string
+        format: date
+        description: ISO 8601 formatted date of contract paid till date. 
+      reference:
+        type: string
+        description: Customer reference
+        example: "Customer defined reference number"
+      created:
+        type: string
+        format: date-time
+        description: ISO 8601 formatted timestamp of creation. 
