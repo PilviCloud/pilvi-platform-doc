@@ -449,13 +449,6 @@ definitions:
       name:
         type: string
 
-  OrderServices:
-    type: object
-    properties:
-      service:
-        type: object
-        $ref: '#/definitions/ContentService'
-
   ProductProperty:
     type: object
     description: Product Properties which get their value from the Product.
@@ -526,7 +519,7 @@ definitions:
       services:
         type: array
         items:
-          $ref: '#/definitions/OrderServices'
+          $ref: '#/definitions/ContentService'
       invoice:
         $ref: '#/definitions/ContentInvoice'
       created_by:
