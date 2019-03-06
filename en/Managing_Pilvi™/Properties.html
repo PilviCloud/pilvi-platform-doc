@@ -136,9 +136,18 @@
 </li>
 </ul>    </div>
 </div>
-<p>Properties are case-insensitive.</p>
+<p>Properties have</p>
+<ul>
+<li>a unique Property Name, ex. <code>site-1-my.example.property</code>
+</li>
+<li>a localized Property Label, ex. <code>My Example Property</code>
+</li>
+<li>a Property Type, which defines where the Property receives its value.</li>
+<li>a Property Value Type, which defines the type of the value. See list of possible Value Types below.</li>
+<li>a Property value.</li>
+</ul>
 <h1 id="page_section_1">Property values</h1>
-<p>Property has a value type, that cannot be altered after its creation:</p>
+<p>Property has a Value type, that cannot be altered after its creation:</p>
 <ul>
 <li>
 <strong>Checkbox</strong>. Yes/No toggle. Shown in the UI as a checkbox.</li>
@@ -206,10 +215,12 @@
 <h1 id="page_section_3">Property categories</h1>
 <p>Properties are divided into to categories: <strong>Product</strong> and <strong>Profile</strong>.</p>
 <h2 id="page_section_4">Product Properties</h2>
-<p>Product Properties define a Product.</p>
+<p>Product Properties define a Product. Product Properties may have their value set on the Product or on the Service.</p>
+<p>Names of the Product Properties that are created by a Seller are automatically prefixed with a Seller ID. Ex. <code>seller-1-</code></p>
 <h2 id="page_section_5">Profile Properties</h2>
 <p>Site Administrator can define and set the values of the Profile Properties in Manager. Profile Property values may be required from the user in Shop Sign Up and Shop Cart. User can also see and change the values in Console.</p>
 <p>In addition to the Property value type and validation, Site Administrator may set Profile Property attributes for the visibility, validation, helpers, and localizations.</p>
+<p>Names of the Profile Properties are automatically prefixed with the Site ID. Ex. <code>site-1-</code></p>
 <h3 id="page_section_6">Adding New Profile Properties</h3>
 <p>New Profile Properties can be added in Customers - Profile Properties. The name will be used by default for all the locales.</p>
 <h3 id="page_section_7">Required</h3>

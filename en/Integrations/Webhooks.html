@@ -87,14 +87,32 @@
 
     <div class="s-content">
         <p><strong>Currently Webhooks may only be triggered via Action Rules</strong></p>
-<p><a href="../../files/pilvi-webhook-spec.yaml">Swagger/OpenAPI 2.0 Spec</a></p>
-<p>Webhooks allow you to receive notifications from events that occur on the Pilvi Platform.</p>
-<p>Webhooks can be used to integrate Pilvi with external Services or Platforms.</p>
-<p>When a webhook is triggered, Pilvi Platform will send a HTTP POST payload to the specified URL.</p>
-<p>The content of the payload is determined by the source which triggered the Webhook.</p>
-<h1 id="page_section_1">Request validation</h1>
-<p>With each incoming request coming from the Pilvi Platform, a token will be passed in the headers as <code>token</code>.
-This token may be used to validate that the request came from Pilvi. The value of the token may be defined and changed on the Pilvi Platform.</p>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-rc.2/bundles/redoc.standalone.js"> </script>
+    <redoc id='redoc-container'></redoc>
+    <script>
+      Redoc.init('https://pilvicloud.github.io/pilvi-platform-doc/files/pilvi-webhook-spec.yaml', {
+        scrollYOffset: 50,
+        hideLoading: true,
+        disableSearch: true,
+        showExtensions: true,
+        theme: {
+          colors: {
+            primary: {
+              main: '#30adea'
+            }
+          },
+          typography: {
+            fontFamily: 'inherit',
+            headings: {
+              fontFamily: 'inherit',
+              fontWeight: '400',
+            }
+          }
+        }
+      }, document.getElementById('redoc-container'))
+    </script>
+  </body>
     </div>
 
         <nav>
