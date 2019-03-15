@@ -113,9 +113,14 @@
 </li>
 <li>
 <p><a href="#page_section_7">Sections</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_section_8">Cart Ready page</a></p>
+</li>
+</ul>
 </li>
 <li>
-<p><a href="#page_section_8">Examples</a></p>
+<p><a href="#page_section_9">Examples</a></p>
 </li>
 </ul>
 </li>
@@ -247,20 +252,27 @@ Oops, something went wrong
 {{/section.order_fail}}
 </code></pre>
 <p>The text is included only if variable section.order_fail value is true. Sections may be nested.</p>
-<p>For example Cart Ready page defines sections:</p>
-<ul>
-<li>section.order_success
-<ul>
-<li>section.order_payment_received</li>
-<li>section.order_payment_invoice</li>
-<li>section.order_payment_not_needed</li>
-<li>section.order_payment_fail</li>
-</ul>
-</li>
-<li>section.order_failed</li>
-</ul>
-<p>On this page, when section.order_success is true, the order was created. Only one of the sections inside order_success is true.</p>
-<h2 id="page_section_8">Examples</h2>
+<h3 id="page_section_8">Cart Ready page</h3>
+<p>On this page, when section.order_success is true, the order was received successfully. Only one of the sections inside order_success is true at a time.</p>
+<table>
+<thead>
+<tr>
+<th>Section (1st level)</th>
+<th>Section (2nd level, only one present at a time)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>section.order_success</td>
+<td>section.order_payment_received<br />section.order_payment_invoice<br />section.order_payment_not_needed<br />section.order_payment_fail</td>
+</tr>
+<tr>
+<td>section.order_failed</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="page_section_9">Examples</h2>
 <p>See the default System Page Block contents, for example Product Configure Top block. For more advanced example, see Cart Ready Top block.</p>
     </div>
 
