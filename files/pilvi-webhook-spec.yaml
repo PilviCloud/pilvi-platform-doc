@@ -17,7 +17,7 @@ info:
     This token may be used to validate that the request came from Pilvi. The value of the token may be defined and changed on the Pilvi Platform. 
     
 
-  version: "1.0-20190305"
+  version: "1.0-20190318"
 # the domain of the service
 host: your-host.com
 # array of all schemes that your API supports
@@ -500,8 +500,8 @@ definitions:
           value: "2019-01-01"
           summary: Date formatted value
          FILE_BASE64:
-          value: "filename.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="
-          summary: Base64 formatted value of a file
+          value: "filename1.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ=|filename2.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="
+          summary: Base64 formatted value of a file. Files separated with | character. Base64 formatted files are prepended with `filename/`.
 
   ContentOrder:
     type: object
