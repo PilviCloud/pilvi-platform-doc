@@ -501,7 +501,7 @@ definitions:
           summary: Date formatted value
          FILE_BASE64:
           value: "filename1.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ=|filename2.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="
-          summary: Base64 formatted file data. Files separated with | character. Base64 formatted files are prepended with `filename/`.
+          summary: Base64 formatted file data. Files separated with | character. Base64 encoded file data is prepended with `filename/`.
 
   ContentOrder:
     type: object
