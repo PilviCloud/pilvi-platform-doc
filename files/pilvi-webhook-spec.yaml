@@ -1,36 +1,30 @@
-swagger: '2.0'
+openapi: 3.0.0
 info:
   title: Pilvi Platfrom Webhook specification DRAFT
-  description: |
-
+  description: >
+    
     Webhooks allow you to receive notifications from events that occur on the Pilvi Platform.
+
 
     When a webhook is triggered, Pilvi Platform will send a HTTP POST payload to a specified URL.
 
+
     The content of the payload is determined by the event which triggered the Webhook.
+
 
     This specification describes the format that Pilvi Platform uses when performing Webhook calls.
 
+
     # Request validation
 
-    With each incoming request from the Pilvi Platform, a token will be passed in the headers as `token`.
-    This token may be used to validate that the request came from Pilvi. The value of the token may be defined and changed on the Pilvi Platform. 
-    
 
-  version: "1.0-20190318"
-# the domain of the service
-host: your-host.com
-# array of all schemes that your API supports
-schemes:
-  - https
-produces:
-  - application/json
-security: [ { token: [] } ]
-securityDefinitions:
-  token:
-    type: apiKey
-    name: token
-    in: header
+    With each incoming request from the Pilvi Platform, a token will be passed in the headers as `token`.
+
+    This token may be used to validate that the request came from Pilvi. The value of the token may be defined and changed on the Pilvi Platform. 
+  version: 1.0-20190318
+security:
+  - token:
+      []
 paths:
   /your-endpoint:
     post:
@@ -38,524 +32,506 @@ paths:
       operationId: receiveWebhook
       description: |
         This endpoint receives a webhook call from Pilvi Platform.
-      parameters:
-        - name: body
-          in: body
-          description: Payload of the Webhook.
-          required: true
-          schema:
-            $ref: '#/definitions/WebhookPayload' 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookPayload"
+        description: Payload of the Webhook.
+        required: true
       tags:
         - Webhook
       responses:
-        200:
+        "200":
           description: Request received successfully.
-        201:
+        "201":
           description: Request received successfully.
-        400:
+        "400":
           description: Request not received. Retrying later.
-        401:
+        "401":
           description: Request not received. Retrying later.
-        404:
+        "404":
           description: Request not received. Retrying later.
-        410:
+        "410":
           description: Request not received. No retries.
-        500:
+        "500":
           description: Request not received. Retrying later.
-definitions:
-  WebhookPayload:
-    type: object
-    required: [ id, version, timestamp, source, content ]
-    properties:
-      id:
-        type: string
-        description: Unique string for identifying the request
-        example: "ar_123456789"
-      version:
-        type: string
-        enum: ["1.0"]
-        description: Version number of the Webhook format.
-      timestamp:
-        type: string
-        format: date-time
-        description: ISO 8601 formatted timestamp of Webhook event creation. In UTC.
-      source:
-        type: string
-        enum: ["action_rule", "system"]
-        description: |
-          Source of the request
-      event:
-        type: string
-        enum: ["ORDER_CREATED","ORDER_ACTIVATED"]
-      content:
-        $ref: '#/definitions/WebhookContent'
-  WebhookContent:
-    type: object
-    description: Webhook content. Available object is determined by the event.
-    properties:
-      user:
-        $ref: '#/definitions/ContentUser'
-      profile:
-        $ref: '#/definitions/ContentProfile'
-      service:
-        $ref: '#/definitions/ContentService'
-      order:
-        $ref: '#/definitions/ContentOrder'
-      contract:
-        $ref: '#/definitions/ContentContract'
-      product:
-        $ref: '#/definitions/ContentProduct'
-      invoice:
-        $ref: '#/definitions/ContentInvoice'
-  ContentUser:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform User ID. Unique within the environment.
-        example: 1
-      email:
-        type: string
-        format: email
-        description: Email address of the User.
-        example: "firstname.lastname@example.com"
-      name:
-        type: string
-        description: Full name of the User.
-        example: "Firstname Lastname"
-      firstname:
-        type: string
-        description: First name of the User.
-        example: "Firstname"
-      lastname:
-        type: string
-        description: Last name of the User.
-        example: "Lastname"
-
-  ContentProfile:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform Profile ID. Unique within the environment.
-        example: 1
-      no:
-        type: integer
-        description: Pilvi Platform Profile Number. Unique within the Site.
-        example: 1
-      name:
-        type: string
-        description: Name of the Profile.
-        example: "My Profile Name"
-      vat_number:
-        type: string
-        description: VAT ID Number
-        example: FI123456789
+servers:
+  - url: https://your-host.com
+components:
+  securitySchemes:
+    token:
+      type: apiKey
+      name: token
+      in: header
+  schemas:
+    WebhookPayload:
+      type: object
+      required:
+        - id
+        - version
+        - timestamp
+        - source
+        - content
       properties:
-        type: array
-        description: Profile Properties and their values.
-        items:
-          $ref: '#/definitions/ProfileProperty'
-      services:
-        type: array
-        description: Services of the Profile
-        items:
-          $ref: '#/definitions/ContentService'
-
-
-  ProfileProperty:
-    type: object
-    description: Profile Properties which are set for the Product.
-    properties:
-      name:
-        type: string
-        description: Unique Name of the Property
-        example: "site-1-my.property.a"
-      label:
-        type: string
-        description: Human Readable name of the Property
-        example: "My Property B"
-      value_type:
-        type: object
-        properties:
-          id:
-            type: integer
-            description: Value Type ID of the Property.
-            example: 1
-          name:
-            type: string
-            description: Value Type Name of the Property.
-            example: STRING
-        examples: 
-         STRING:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_MULTI_LINE:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_OPTION:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_OPTION_MULTIPLE:
-          value: "Example value|Another Example Value"
-          summary: Text formatted value
-         NUMBER:
-          value: "1.50"
-          summary: Number formatted value
-         BOOLEAN:
-          value: "true"
-          summary: Boolean formatted value
-         DATE:
-          value: "2019-01-01"
-          summary: Date formatted value
-         FILE_BASE64:
-          value: "filename.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="
-          summary: Base64 formatted value of a file
-
-  InvoiceAddress:
-    type: object
-    properties:
-      street_address:
-        type: string
-        description: Street Address
-      zip_code:
-        type: string
-        description: Zip code
-      city:
-        type: string
-        description: City
-      country:
-        type: object
-        properties:
-          code:
-            type: string
-            enum: ["FI"]
-          name:
-            type: string 
-      state:
-        type: object
-        properties:
-          code:
-            type: string
-            enum: ["FI"]
-          name:
-            type: string 
-
-  ContentService:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform Service ID. Unique within the environment.
-        example: 1
-      no:
-        type: integer
-        description: Pilvi Platform Service Number. Unique within the Site.
-        example: 1
-      name:
-        type: string
-        description: Name of the Service.
-        example: "My Service 1"
-      url:
-        type: string
-        description: Service Page URL
-        example: "https://my-shop-address-on-pilvi-platform.com/console/services/1"
-      product:
-        $ref: '#/definitions/ContentProduct'
+        id:
+          type: string
+          description: Unique string for identifying the request
+          example: ar_123456789
+        version:
+          type: string
+          enum:
+            - "1.0"
+          description: Version number of the Webhook format.
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of Webhook event creation. In UTC.
+        source:
+          type: string
+          enum:
+            - action_rule
+            - system
+          description: |
+            Source of the request
+        event:
+          type: string
+          enum:
+            - ORDER_CREATED
+            - ORDER_ACTIVATED
+        content:
+          $ref: "#/components/schemas/WebhookContent"
+    WebhookContent:
+      type: object
+      description: Webhook content. Available object is determined by the event.
       properties:
-        type: array
-        items:
-          $ref: '#/definitions/ServiceProperty'
-
-  ServiceProperty:
-    type: object
-    description: Product Properties which get their value from the Service.
-    properties:
-      name:
-        type: string
-        description: Unique Name of the Property
-        example: "seller-1-my.property.b"
-      label:
-        type: string
-        description: Human Readable name of the Property
-        example: "My Property B"
-      value_type:
-        type: object
-        properties:
-          id:
-            type: integer
-            description: Value Type ID of the Property.
-            example: 1
-          name:
-            type: string
-            description: Value Type Name of the Property.
-            example: STRING
-      value:
-        type: string
-        description: Value of the Property
-        examples: 
-         text:
-          value: "Example value"
-          summary: Text formatted value
-         number:
-          value: "1.50"
-          summary: Number formatted value
-         boolean:
-          value: "true"
-          summary: Boolean formatted value
-         date:
-          value: "2019-01-01"
-          summary: Date formatted value
-         file_base64:
-          value: "RXhhbXBsZSBGaWxlIENvbnRlbnQ="
-          summary: Base64 formatted value of a file
-
-  ContentProduct:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform Product ID. Unique within the environment.
-        example: 1
-      no:
-        type: integer
-        description: Pilvi Platform Product Number. Unique within the Site.
-        example: 1
-      name:
-        type: string
-        description: Name of the Product.
-        example: "Product A"
-      plan:
-        type: string
-        description: Plan name of the Product.
-        example: "Plan B"
+        user:
+          $ref: "#/components/schemas/ContentUser"
+        profile:
+          $ref: "#/components/schemas/ContentProfile"
+        service:
+          $ref: "#/components/schemas/ContentService"
+        order:
+          $ref: "#/components/schemas/ContentOrder"
+        contract:
+          $ref: "#/components/schemas/ContentContract"
+        product:
+          $ref: "#/components/schemas/ContentProduct"
+        invoice:
+          $ref: "#/components/schemas/ContentInvoice"
+    ContentUser:
+      type: object
       properties:
-        type: array
-        items:
-          $ref: '#/definitions/ProductProperty'
-
-  ContentInvoice:
-    type: object
-    properties:
-      sum:
-        type: number
-        format: float
-        description: The total sum of the Invoice. Without VAT.
-        examvatple: 4.0242
-      sum_vat:
-        type: number
-        format: float
-        description: The total sum of the Invoice. With VAT.
-        example: 4.99
-      sum_open:
-        type: number
-        format: float
-        description: The total open sum of the Invoice. Without VAT.
-        example: 4.0242
-      sum_open_vat:
-        type: number
-        format: float
-        description: The total open sum of the Invoice. With VAT.
-        example: 4.99
-      reference:
-        type: string
-        description: Customer reference
-        example: "Customer defined reference number"
-      items:
-        type: array
-        items:
-          $ref: '#/definitions/InvoiceItems'
-      addresses:
-        type: object
+        id:
+          type: integer
+          description: Pilvi Platform User ID. Unique within the environment.
+          example: 1
+        email:
+          type: string
+          format: email
+          description: Email address of the User.
+          example: firstname.lastname@example.com
+        name:
+          type: string
+          description: Full name of the User.
+          example: Firstname Lastname
+        firstname:
+          type: string
+          description: First name of the User.
+          example: Firstname
+        lastname:
+          type: string
+          description: Last name of the User.
+          example: Lastname
+    ContentProfile:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Profile ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Profile Number. Unique within the Site.
+          example: 1
+        name:
+          type: string
+          description: Name of the Profile.
+          example: My Profile Name
+        vat_number:
+          type: string
+          description: VAT ID Number
+          example: FI123456789
         properties:
-          seller:
-            $ref: '#/definitions/InvoiceAddress'
-          invoice:
-            $ref: '#/definitions/InvoiceAddress'
-          delivery:
-            $ref: '#/definitions/InvoiceAddress'
-      payments:
-        type: array
-        items:
-          $ref: '#/definitions/InvoicePayments'
-
-  InvoiceItems:
-    type: object
-    properties:
-      description:
-        type: string
-        example: Example Product
-      service:
-        type: object
+          type: array
+          description: Profile Properties and their values.
+          items:
+            $ref: "#/components/schemas/ProfileProperty"
+        services:
+          type: array
+          description: Services of the Profile
+          items:
+            $ref: "#/components/schemas/ContentService"
+    ProfileProperty:
+      type: object
+      description: Profile Properties which are set for the Product.
+      properties:
+        name:
+          type: string
+          description: Unique Name of the Property
+          example: site-1-my.property.a
+        label:
+          type: string
+          description: Human Readable name of the Property
+          example: My Property A
+        value_type:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: Value Type ID of the Property.
+              example: 1
+            name:
+              type: string
+              description: Value Type Name of the Property.
+              example: STRING
+        value:
+          oneOf:
+            - type: string
+            - type: boolean
+            - type: array
+              items:
+                type: string
+          description: Value of the Property. Type varies.
+    InvoiceAddress:
+      type: object
+      properties:
+        street_address:
+          type: string
+          description: Street Address
+        zip_code:
+          type: string
+          description: Zip code
+        city:
+          type: string
+          description: City
+        country:
+          type: object
+          properties:
+            code:
+              type: string
+              enum:
+                - FI
+            name:
+              type: string
+        state:
+          type: object
+          properties:
+            code:
+              type: string
+              enum:
+                - FI
+            name:
+              type: string
+    ContentService:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Service ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Service Number. Unique within the Site.
+          example: 1
+        name:
+          type: string
+          description: Name of the Service.
+          example: My Service 1
+        url:
+          type: string
+          description: Service Page URL
+          example: https://my-shop-address-on-pilvi-platform.com/console/services/1
+        product:
+          $ref: "#/components/schemas/ContentProduct"
         properties:
-          id:
-            type: integer
-            example: 1
-      multiplier:
-        type: integer
-        example: 1
-      price:
-        type: number
-        format: float
-        example: 4.0242
-      sum:
-        type: number
-        format: float
-        description: Price with multiplier without VAT
-        example: 4.0242
-      sum_vat:
-        type: number
-        format: float
-        description: Price with multiplier and VAT
-        example: 4.99
-      unit:
-        type: string
-        description: Unit of the Item
-        example: month
-      recurring:
-        type: boolean
-        description: Tells if the Item represents a one-time cost or a recurring
-        example: true
-      vat_rate:
-        type: number
-        format: float
-        description: VAT rate percentage.
-        example: 24
-      vat_amount:
-        type: number
-        format: float
-        description: Amount of VAT.
-        example: 0.9660
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceProperty"
+    ServiceProperty:
+      type: object
+      description: Product Properties which get their value from the Service.
+      properties:
+        name:
+          type: string
+          description: Unique Name of the Property
+          example: seller-1-my.property.b
+        label:
+          type: string
+          description: Human Readable name of the Property
+          example: My Property B
+        value_type:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: Value Type ID of the Property.
+              example: 1
+            name:
+              type: string
+              description: Value Type Name of the Property.
+              example: STRING
+        value:
+          oneOf:
+            - type: string
+            - type: boolean
+            - type: array
+              items:
+                type: string
+          description: Value of the Property. Type varies.
+          example: 
+           STRING:
+            value: "Example value"
+            summary: Text formatted value
+           STRING_MULTI_LINE:
+            value: "Example value"
+            summary: Text formatted value
+           STRING_OPTION:
+            value: "Example value"
+            summary: Text formatted value
+           STRING_OPTION_MULTIPLE:
+            value: ["Example value", "Another Example Value"]
+            summary: Text formatted value
+           NUMBER:
+            value: "1.50"
+            summary: Number formatted value
+           BOOLEAN:
+            value: "true"
+            summary: Boolean formatted value
+           DATE:
+            value: "2019-01-01"
+            summary: Date formatted value
+           FILE_BASE64:
+            value: ["filename1.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ=","filename2.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="]
+            summary: Base64 formatted file data. Base64 encoded file data is prepended with `filename/`.
 
-  InvoicePayments:
-    type: object
-    properties:
-      sum:
-        type: number
-        format: float
-      processor:
-        type: object
-        $ref: '#/definitions/PaymentProcessor'
-      created:
-        type: string
-        format: date-time
-        description: ISO 8601 formatted timestamp of creation. In UTC.
-
-  PaymentProcessor:
-    type: object
-    properties:
-      id:
-        type: integer
-      code:
-        type: string
-      name:
-        type: string
-
-  ProductProperty:
-    type: object
-    description: Product Properties which get their value from the Product.
-    properties:
-      name:
-        type: string
-        description: Unique Name of the Property.
-        example: "seller-1-my.property.a"
-      label:
-        type: string
-        description: Human Readable name of the Property.
-        example: "My Property A"
-      value_type:
-        type: object
+    ContentProduct:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Product ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Product Number. Unique within the Site.
+          example: 1
+        name:
+          type: string
+          description: Name of the Product.
+          example: Product A
+        plan:
+          type: string
+          description: Plan name of the Product.
+          example: Plan B
         properties:
-          id:
-            type: integer
-            description: Value Type ID of the Property.
-            example: 1
-          name:
-            type: string
-            description: Value Type Name of the Property.
-            example: STRING
-      value:
-        type: string
-        description: Value of the Property
-        examples: 
-         STRING:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_MULTI_LINE:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_OPTION:
-          value: "Example value"
-          summary: Text formatted value
-         STRING_OPTION_MULTIPLE:
-          value: "Example value|Another Example Value"
-          summary: Text formatted value
-         NUMBER:
-          value: "1.50"
-          summary: Number formatted value
-         BOOLEAN:
-          value: "true"
-          summary: Boolean formatted value
-         DATE:
-          value: "2019-01-01"
-          summary: Date formatted value
-         FILE_BASE64:
-          value: "filename1.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ=|filename2.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="
-          summary: Base64 formatted file data. Files separated with | character. Base64 encoded file data is prepended with `filename/`.
-
-  ContentOrder:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform Order ID. Unique within the environment.
-        example: 1
-      no:
-        type: integer
-        description: Pilvi Platform Order Number. Unique within the Site.
-        example: 1
-      created:
-        type: string
-        format: date-time
-        description: ISO 8601 formatted timestamp of creation. In UTC.
-      services:
-        type: array
+          type: array
+          items:
+            $ref: "#/components/schemas/ProductProperty"
+    ContentInvoice:
+      type: object
+      properties:
+        sum:
+          type: number
+          format: float
+          description: The total sum of the Invoice. Without VAT.
+          example: 4.0242
+        sum_vat:
+          type: number
+          format: float
+          description: The total sum of the Invoice. With VAT.
+          example: 4.99
+        sum_open:
+          type: number
+          format: float
+          description: The total open sum of the Invoice. Without VAT.
+          example: 4.0242
+        sum_open_vat:
+          type: number
+          format: float
+          description: The total open sum of the Invoice. With VAT.
+          example: 4.99
+        reference:
+          type: string
+          description: Customer reference
+          example: Customer defined reference number
         items:
-          $ref: '#/definitions/ContentService'
-      invoice:
-        $ref: '#/definitions/ContentInvoice'
-      created_by:
-        $ref: '#/definitions/ContentUser'
-
-
-  ContentContract:
-    type: object
-    properties:
-      id:
-        type: integer
-        description: Pilvi Platform Order ID. Unique within the environment.
-        example: 1
-      no:
-        type: integer
-        description: Pilvi Platform Order Number. Unique within the Site.
-        example: 1
-      start_date:
-        type: string
-        format: date
-        description: ISO 8601 formatted date of contract start date. 
-      invoiced_till:
-        type: string
-        format: date
-        description: ISO 8601 formatted date of contract invoiced till date. 
-      paid_till:
-        type: string
-        format: date
-        description: ISO 8601 formatted date of contract paid till date. 
-      reference:
-        type: string
-        description: Customer reference
-        example: "Customer defined reference number"
-      created:
-        type: string
-        format: date-time
-        description: ISO 8601 formatted timestamp of creation. In UTC.
+          type: array
+          items:
+            $ref: "#/components/schemas/InvoiceItems"
+        addresses:
+          type: object
+          properties:
+            seller:
+              $ref: "#/components/schemas/InvoiceAddress"
+            invoice:
+              $ref: "#/components/schemas/InvoiceAddress"
+            delivery:
+              $ref: "#/components/schemas/InvoiceAddress"
+        payments:
+          type: array
+          items:
+            $ref: "#/components/schemas/InvoicePayments"
+    InvoiceItems:
+      type: object
+      properties:
+        description:
+          type: string
+          example: Example Product
+        service:
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 1
+        multiplier:
+          type: integer
+          example: 1
+        price:
+          type: number
+          format: float
+          example: 4.0242
+        sum:
+          type: number
+          format: float
+          description: Price with multiplier without VAT
+          example: 4.0242
+        sum_vat:
+          type: number
+          format: float
+          description: Price with multiplier and VAT
+          example: 4.99
+        unit:
+          type: string
+          description: Unit of the Item
+          example: month
+        recurring:
+          type: boolean
+          description: Tells if the Item represents a one-time cost or a recurring
+          example: true
+        vat_rate:
+          type: number
+          format: float
+          description: VAT rate percentage.
+          example: 24
+        vat_amount:
+          type: number
+          format: float
+          description: Amount of VAT.
+          example: 0.966
+    InvoicePayments:
+      type: object
+      properties:
+        sum:
+          type: number
+          format: float
+        processor:
+          $ref: "#/components/schemas/PaymentProcessor"
+        created:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of creation. In UTC.
+    PaymentProcessor:
+      type: object
+      properties:
+        id:
+          type: integer
+        code:
+          type: string
+        name:
+          type: string
+    ProductProperty:
+      type: object
+      description: Product Properties which get their value from the Product.
+      properties:
+        name:
+          type: string
+          description: Unique Name of the Property.
+          example: seller-1-my.property.a
+        label:
+          type: string
+          description: Human Readable name of the Property.
+          example: My Property A
+        value_type:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: Value Type ID of the Property.
+              example: 1
+            name:
+              type: string
+              description: Value Type Name of the Property.
+              example: STRING
+        value:
+          oneOf:
+            - type: string
+            - type: boolean
+            - type: array
+              items:
+                type: string
+          description: Value of the Property. Type varies.
+    ContentOrder:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Order ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Order Number. Unique within the Site.
+          example: 1
+        created:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of creation. In UTC.
+        services:
+          type: array
+          items:
+            $ref: "#/components/schemas/ContentService"
+        invoice:
+          $ref: "#/components/schemas/ContentInvoice"
+        created_by:
+          $ref: "#/components/schemas/ContentUser"
+    ContentContract:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Order ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Order Number. Unique within the Site.
+          example: 1
+        start_date:
+          type: string
+          format: date
+          description: ISO 8601 formatted date of contract start date.
+        invoiced_till:
+          type: string
+          format: date
+          description: ISO 8601 formatted date of contract invoiced till date.
+        paid_till:
+          type: string
+          format: date
+          description: ISO 8601 formatted date of contract paid till date.
+        reference:
+          type: string
+          description: Customer reference
+          example: Customer defined reference number
+        created:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of creation. In UTC.
