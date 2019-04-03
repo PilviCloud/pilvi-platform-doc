@@ -99,36 +99,36 @@
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_1">Property values</a></p>
+<p><a href="#page_Property-values">Property values</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_2">Property validations</a></p>
+<p><a href="#page_Property-validations">Property validations</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_3">Property categories</a></p>
+<p><a href="#page_Property-categories">Property categories</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_4">Product Properties</a></p>
+<p><a href="#page_Product-Properties">Product Properties</a></p>
 </li>
 <li>
-<p><a href="#page_section_5">Profile Properties</a></p>
+<p><a href="#page_Profile-Properties">Profile Properties</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_6">Adding New Profile Properties</a></p>
+<p><a href="#page_Adding-New-Profile-Properties">Adding New Profile Properties</a></p>
 </li>
 <li>
-<p><a href="#page_section_7">Required</a></p>
+<p><a href="#page_Required">Required</a></p>
 </li>
 <li>
-<p><a href="#page_section_8">Accessibility in Shop/Console/Manager</a></p>
+<p><a href="#page_Accessibility-in-Shop-Console-Manager">Accessibility in Shop/Console/Manager</a></p>
 </li>
 <li>
-<p><a href="#page_section_9">Show for (Profile Type)</a></p>
+<p><a href="#page_Show-for-Profile-Type">Show for (Profile Type)</a></p>
 </li>
 <li>
-<p><a href="#page_section_10">Position</a></p>
+<p><a href="#page_Position">Position</a></p>
 </li>
 </ul>
 </li>
@@ -146,7 +146,7 @@
 <li>a Property Value Type, which defines the type of the value. See list of possible Value Types below.</li>
 <li>a Property value.</li>
 </ul>
-<h1 id="page_section_1">Property values</h1>
+<h1 id="page_Property-values">Property values</h1>
 <p>Property has a Value type, that cannot be altered after its creation:</p>
 <ul>
 <li>
@@ -164,7 +164,7 @@
 <li>
 <strong>Date</strong>. Date value with month, day, and year. Shown in the UI as a date picker.</li>
 </ul>
-<h2 id="page_section_2">Property validations</h2>
+<h2 id="page_Property-validations">Property validations</h2>
 <p>Property values may also have an optional validation that restricts the value of the Property.</p>
 <table>
 <thead>
@@ -212,20 +212,20 @@
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_3">Property categories</h1>
+<h1 id="page_Property-categories">Property categories</h1>
 <p>Properties are divided into to categories: <strong>Product</strong> and <strong>Profile</strong>.</p>
-<h2 id="page_section_4">Product Properties</h2>
+<h2 id="page_Product-Properties">Product Properties</h2>
 <p>Product Properties define a Product. Product Properties may have their value set on the Product or on the Service.</p>
 <p>Names of the Product Properties that are created by a Seller are automatically prefixed with a Seller ID. Ex. <code>seller-1-</code></p>
-<h2 id="page_section_5">Profile Properties</h2>
+<h2 id="page_Profile-Properties">Profile Properties</h2>
 <p>Site Administrator can define and set the values of the Profile Properties in Manager. Profile Property values may be required from the user in Shop Sign Up and Shop Cart. User can also see and change the values in Console.</p>
 <p>In addition to the Property value type and validation, Site Administrator may set Profile Property attributes for the visibility, validation, helpers, and localizations.</p>
 <p>Names of the Profile Properties are automatically prefixed with the Site ID. Ex. <code>site-1-</code></p>
-<h3 id="page_section_6">Adding New Profile Properties</h3>
+<h3 id="page_Adding-New-Profile-Properties">Adding New Profile Properties</h3>
 <p>New Profile Properties can be added in Customers - Profile Properties. The name will be used by default for all the locales.</p>
-<h3 id="page_section_7">Required</h3>
+<h3 id="page_Required">Required</h3>
 <p>If Required is set, User has to input a value before proceeding.</p>
-<h3 id="page_section_8">Accessibility in Shop/Console/Manager</h3>
+<h3 id="page_Accessibility-in-Shop-Console-Manager">Accessibility in Shop/Console/Manager</h3>
 <p>Profile Property accessibility can be defined separately for Shop (Sign Up, Cart), Console (User Settings), and Manager (Customer Profiles). The accessibility options for each are:</p>
 <ul>
 <li>
@@ -235,7 +235,7 @@
 <li>
 <strong>Editable</strong>. Profile Property value is visible and may be edited.</li>
 </ul>
-<h3 id="page_section_9">Show for (Profile Type)</h3>
+<h3 id="page_Show-for-Profile-Type">Show for (Profile Type)</h3>
 <p>Profile Property access can be further limited based on the profile type.</p>
 <ul>
 <li>
@@ -245,7 +245,7 @@
 <li>
 <strong>All</strong>. Both Person and Business users can see/edit the property.</li>
 </ul>
-<h3 id="page_section_10">Position</h3>
+<h3 id="page_Position">Position</h3>
 <p>Position number can be used to sort Profile Properties on the forms in ascending order. The default is 0. Note that properties with the same position number are not in any specific order within that position.</p>
     </div>
 
@@ -263,7 +263,13 @@
     
     <!-- JS -->
     <script src="../../themes/pilvi/js/jquery-1.11.3.min.js"></script><script src="../../themes/pilvi/js/highlight.pack.js"></script><script src="../../themes/pilvi/js/daux.js"></script>
-            <!-- Tipue Search -->
+            <script>
+            
+            window.searchLanguage = "en";
+            window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+        </script>
+
+        <!-- Tipue Search -->
         <script type="text/javascript" src="../../tipuesearch/tipuesearch.js"></script>
 
         <script>

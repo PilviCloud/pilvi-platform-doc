@@ -91,21 +91,21 @@
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_1">Default Action Rule Preset</a></p>
+<p><a href="#page_Default-Action-Rule-Preset">Default Action Rule Preset</a></p>
 </li>
 <li>
-<p><a href="#page_section_2">Conditions</a></p>
+<p><a href="#page_Conditions">Conditions</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_3">Primary conditions</a></p>
+<p><a href="#page_Primary-conditions">Primary conditions</a></p>
 </li>
 <li>
-<p><a href="#page_section_4">Secondary conditions</a></p>
+<p><a href="#page_Secondary-conditions">Secondary conditions</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_5">Functions</a></p>
+<p><a href="#page_Functions">Functions</a></p>
 </li>
 </ul>    </div>
 </div>
@@ -120,7 +120,7 @@
 </ul>
 <p>Pilvi Platform provides a set of default Action Rules that give you fully working message workflow for your Customer.
 You can of course alter it as you see fit.</p>
-<h1 id="page_section_1">Default Action Rule Preset</h1>
+<h1 id="page_Default-Action-Rule-Preset">Default Action Rule Preset</h1>
 <table>
 <thead>
 <tr>
@@ -151,15 +151,14 @@ You can of course alter it as you see fit.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_2">Conditions</h1>
-<h2 id="page_section_3">Primary conditions</h2>
+<h1 id="page_Conditions">Conditions</h1>
+<h2 id="page_Primary-conditions">Primary conditions</h2>
 <table>
 <thead>
 <tr>
 <th>Name</th>
 <th>Triggers</th>
 <th>Additional parameters</th>
-<th>Contains contexts</th>
 </tr>
 </thead>
 <tbody>
@@ -167,83 +166,70 @@ You can of course alter it as you see fit.</p>
 <td>LOGIN_FROM_NEW_IP</td>
 <td>Immediately</td>
 <td></td>
-<td><code>User</code></td>
 </tr>
 <tr>
 <td>USER_CREATED</td>
 <td>Immediately</td>
 <td></td>
-<td><code>User</code></td>
 </tr>
 <tr>
 <td>ORDER_CREATED</td>
 <td>Immediately</td>
 <td></td>
-<td><code>User</code> <code>Profile</code> <code>Order</code></td>
 </tr>
 <tr>
 <td>SERVICE_EXPIRED</td>
 <td>Immediately</td>
 <td></td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_CANCELED</td>
 <td>Immediately</td>
 <td></td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_DISCONTINUED</td>
 <td>Immediately</td>
 <td></td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_EXPIRES_IN</td>
 <td>Scheduled (once a day)</td>
 <td>NUMBER</td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>SERVICE_HAS_BEEN_EXPIRED_FOR</td>
 <td>Scheduled (once a day)</td>
 <td>NUMBER</td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_CREATION</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_TRIAL_END</td>
 <td>Scheduled</td>
 <td></td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_FROM_SERVICE_TRIAL_START</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_TILL_SERVICE_TRIAL_END</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
-<td><code>Profile</code> <code>Service</code></td>
 </tr>
 <tr>
 <td>X_TIME_UNITS_SINCE_USERS_LAST_LOGIN_TO_PILVI_PLATFORM</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
-<td><code>User</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="page_section_4">Secondary conditions</h2>
+<h2 id="page_Secondary-conditions">Secondary conditions</h2>
 <p><strong>May only be used with Primary conditions</strong></p>
 <table>
 <thead>
@@ -279,7 +265,7 @@ You can of course alter it as you see fit.</p>
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_5">Functions</h1>
+<h1 id="page_Functions">Functions</h1>
 <table>
 <thead>
 <tr>
@@ -327,7 +313,13 @@ You can of course alter it as you see fit.</p>
     
     <!-- JS -->
     <script src="../../themes/pilvi/js/jquery-1.11.3.min.js"></script><script src="../../themes/pilvi/js/highlight.pack.js"></script><script src="../../themes/pilvi/js/daux.js"></script>
-            <!-- Tipue Search -->
+            <script>
+            
+            window.searchLanguage = "en";
+            window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+        </script>
+
+        <!-- Tipue Search -->
         <script type="text/javascript" src="../../tipuesearch/tipuesearch.js"></script>
 
         <script>

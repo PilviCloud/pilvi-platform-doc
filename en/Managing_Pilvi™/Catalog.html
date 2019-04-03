@@ -91,47 +91,47 @@
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_1">Products</a></p>
+<p><a href="#page_Products">Products</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_2">Provisioning method</a></p>
+<p><a href="#page_Provisioning-method">Provisioning method</a></p>
 </li>
 <li>
-<p><a href="#page_section_3">Pricing</a></p>
+<p><a href="#page_Pricing">Pricing</a></p>
 </li>
 <li>
-<p><a href="#page_section_4">Life-time</a></p>
+<p><a href="#page_Life-time">Life-time</a></p>
 </li>
 <li>
-<p><a href="#page_section_5">Product Cards</a></p>
+<p><a href="#page_Product-Cards">Product Cards</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_6">Product Card Groups</a></p>
+<p><a href="#page_Product-Card-Groups">Product Card Groups</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_7">Relations</a></p>
+<p><a href="#page_Relations">Relations</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_8">Categories</a></p>
+<p><a href="#page_Categories">Categories</a></p>
 </li>
 <li>
-<p><a href="#page_section_9">Regions</a></p>
+<p><a href="#page_Regions">Regions</a></p>
 </li>
 <li>
-<p><a href="#page_section_10">Brands</a></p>
+<p><a href="#page_Brands">Brands</a></p>
 </li>
 </ul>    </div>
 </div>
 <p>Catalog contains sections that allow you to create and structure your Product Catalog.</p>
-<h1 id="page_section_1">Products</h1>
+<h1 id="page_Products">Products</h1>
 <p>Products are orderable items that your Customers may purchase. Purchased Products become visible for the Customer as Services under the Profile the Product was purchased on.</p>
 <p>Products have a localized name optional plan name as well. Plan name is often used to separate different versions of the same Product, eg. Starter, Basic, Professional.</p>
 <p>Products have a localized description field that you can edit using a WYSIWYG editor. You can create content rich pages describing your products best features, using images and/or videos.</p>
-<h2 id="page_section_2">Provisioning method</h2>
+<h2 id="page_Provisioning-method">Provisioning method</h2>
 <p>Provisioning method defines how the Product is provisioned when the Order is received and activated.</p>
 <ul>
 <li>
@@ -139,7 +139,7 @@
 <li>
 <strong>Automatic - PAITA.</strong> This provisioning method uses PAITA integration to provision the Service. PAITA integration needs to be setup before. See <a href="../Integrations/Service_Integrations.html">Service Integrations</a>.</li>
 </ul>
-<h2 id="page_section_3">Pricing</h2>
+<h2 id="page_Pricing">Pricing</h2>
 <p>Products have 3 different pricing options:</p>
 <ul>
 <li>
@@ -149,15 +149,15 @@
 <li>
 <strong>Recurring</strong>. Product has a price for a certain period. The usage of the Service may be continued after the initially paid period has ended. Product may have a setup cost, that is paid only on the first order. Product may also have a Trial period.</li>
 </ul>
-<h2 id="page_section_4">Life-time</h2>
+<h2 id="page_Life-time">Life-time</h2>
 <p>Product may be externally managed. Externally managed Products are not visible or purchasable in the Shop can cannot have a price. Externally managed Products are used when you want your Services to be provisioned from an outside source.</p>
-<h2 id="page_section_5">Product Cards</h2>
+<h2 id="page_Product-Cards">Product Cards</h2>
 <p>Product Cards may be used to provide different views to your Products. A Product may have many Product Cards that each can have a different theme and varying fields showing information about the Product.</p>
 <p>Product Cards are components that can be embedded to external websites.</p>
-<h3 id="page_section_6">Product Card Groups</h3>
+<h3 id="page_Product-Card-Groups">Product Card Groups</h3>
 <p>Product Card Groups may be used to group Product Cards from different Products into a single element. Product Card Groups enable you to show a compare view of the Products, which shows what feature is available for each Product.</p>
 <p>Product Cards Groups are components that can be embedded to external websites.</p>
-<h2 id="page_section_7">Relations</h2>
+<h2 id="page_Relations">Relations</h2>
 <p>Relations may be added between the products. In the Shop, these relations show as product recommendations in Product Detail and Product Configure.</p>
 <p>There are two relation types, <strong>group</strong> and <strong>single</strong>. If a new group relation is created, the current and the selected target product will be added to the group. More products can be added to the existing group. In the Shop, the products in the group relation will be shown as recommendations for each product in the group. A product may belong to several groups and single relations.</p>
 <p>The Single relation type is unidirectional. The product in the relation (target product) will be shown for the current product in the Shop. The current product won't be shown when inspecting the target product.</p>
@@ -193,11 +193,11 @@
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_8">Categories</h1>
+<h1 id="page_Categories">Categories</h1>
 <p>Categories allow you to group your Products in the Shop with any criteria you want. Categories are visible in the Side menu when in the Shop section.</p>
-<h1 id="page_section_9">Regions</h1>
+<h1 id="page_Regions">Regions</h1>
 <p>Regions are another means of grouping your Products based on geographical location. Regions are shown separately from Categories in the Side menu.</p>
-<h1 id="page_section_10">Brands</h1>
+<h1 id="page_Brands">Brands</h1>
 <p>Regions are another means of grouping your Products based on the provider of the Product. Brands are shown separately from Categories in the Side menu.</p>
     </div>
 
@@ -215,7 +215,13 @@
     
     <!-- JS -->
     <script src="../../themes/pilvi/js/jquery-1.11.3.min.js"></script><script src="../../themes/pilvi/js/highlight.pack.js"></script><script src="../../themes/pilvi/js/daux.js"></script>
-            <!-- Tipue Search -->
+            <script>
+            
+            window.searchLanguage = "en";
+            window.searchTranslation = {"Search_one_result":"1 result","Search_results":"!count results","Search_no_results":"Nothing found","Search_common_words_ignored":"Common words are largely ignored","Search_too_short":"Search too short","Search_one_character_or_more":"Should be one character or more","Search_should_be_x_or_more":"Should be !min characters or more","Link_previous":"Previous","Link_next":"Next"};
+        </script>
+
+        <!-- Tipue Search -->
         <script type="text/javascript" src="../../tipuesearch/tipuesearch.js"></script>
 
         <script>
