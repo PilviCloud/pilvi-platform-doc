@@ -129,6 +129,8 @@
 </ul>    </div>
 </div>
 <h2 id="page_Variables">Variables</h2>
+<p>A variable is added in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
+<p><strong>Note</strong> properties[].value needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
 <p>Variable availability varies between messsage template types. Available contexts define which variables are available.</p>
 <table>
 <thead>
@@ -573,22 +575,17 @@
 <td>string</td>
 </tr>
 <tr>
-<td>product.properties</td>
-<td>Product Properties</td>
-<td>[]</td>
-</tr>
-<tr>
-<td>product.properties.name</td>
+<td>product.properties[].name</td>
 <td>Product Property Name</td>
 <td>string</td>
 </tr>
 <tr>
-<td>product.properties.label</td>
+<td>product.properties[].label</td>
 <td>Product Property Label</td>
 <td>string</td>
 </tr>
 <tr>
-<td>product.properties.value</td>
+<td>product.properties[].value</td>
 <td>Product Property Value</td>
 <td>string</td>
 </tr>

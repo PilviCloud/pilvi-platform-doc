@@ -87,6 +87,26 @@
 
     <div class="s-content">
         <h1 id="page_Pilvi-Platform-Changelog">Pilvi™ Platform Changelog</h1>
+<h2 id="page_2019-04-09">(2019-04-09)</h2>
+<p><strong>Platform version 1.5.2</strong></p>
+<p>Changes</p>
+<ul>
+<li>New Property value type FILE_URL and Property value type FILE renamed to FILE_BASE64
+<ul>
+<li>FILE_URL's value is shown as link in emails, triple braces are needed around the value in the message template</li>
+</ul>
+</li>
+<li>Webhooks now pass the Property value as an array if the Property has several values</li>
+<li>Added Property label for email contexts and webhooks</li>
+</ul>
+<p>Fixes</p>
+<ul>
+<li>Fix for an error in handling the Customer provided reference</li>
+<li>Fix for Cost summary VAT detection on the Cart Payment stage</li>
+<li>Fixes for Analytics implementation. Analytics.page is now called correctly on every virtual page change</li>
+<li>Fix for email Property values not having localized values with Property value type Selectbox and Selectbox multiple</li>
+<li>T570 Fix for Product description sometimes not showing correctly on Shop Product listings</li>
+</ul>
 <h2 id="page_2019-04-04">(2019-04-04)</h2>
 <p><strong>Platform version 1.5.1</strong></p>
 <p>Fixes</p>

@@ -202,7 +202,7 @@ components:
             - type: array
               items:
                 type: string
-          description: Value of the Property. Type varies.
+          description: Value of the Property. Type of the value varies based on the value_type of the Property.
     InvoiceAddress:
       type: object
       properties:
@@ -288,7 +288,7 @@ components:
             - type: array
               items:
                 type: string
-          description: Value of the Property. Type varies.
+          description: Value of the Property. Type of the value varies based on the value_type of the Property.
           example: 
            STRING:
             value: "Example value"
@@ -448,6 +448,11 @@ components:
           type: integer
         code:
           type: string
+          enum:
+            - PAYEX
+            - STRIPE
+            - PAYTRAIL
+            - EXTERNAL_CREDIT_PROVIDER
         name:
           type: string
     ProductProperty:
@@ -480,7 +485,7 @@ components:
             - type: array
               items:
                 type: string
-          description: Value of the Property. Type varies.
+          description: Value of the Property. Type of the value varies based on the value_type of the Property.
     ContentOrder:
       type: object
       properties:
@@ -500,6 +505,8 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ContentService"
+        profile:
+          $ref: "#/components/schemas/ContentProfile"
         invoice:
           $ref: "#/components/schemas/ContentInvoice"
         created_by:
