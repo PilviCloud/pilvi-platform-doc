@@ -341,6 +341,14 @@ components:
     ContentInvoice:
       type: object
       properties:
+        id:
+          type: integer
+          description: Invoice ID. Unique within the environment.
+          example: 1
+        no:
+          type: string
+          description: Invoice Number. Unique within the Site.
+          example: 1
         sum:
           type: number
           format: float
@@ -361,10 +369,14 @@ components:
           format: float
           description: The total open sum of the Invoice. With VAT.
           example: 4.99
-        reference:
+        reference_no:
+          type: string
+          description: Reference number
+          example: 196972
+        customer_reference:
           type: string
           description: Customer reference
-          example: Customer defined reference number
+          example: Customer defined reference
         items:
           type: array
           items:
@@ -385,6 +397,10 @@ components:
     InvoiceItems:
       type: object
       properties:
+        id:
+          type: integer
+          description: Invoice Item ID. Unique within the environment.
+          example: 1
         description:
           type: string
           example: Example Product
@@ -396,10 +412,12 @@ components:
               example: 1
         multiplier:
           type: integer
+          description: Price unit multiplier
           example: 1
         price:
           type: number
           format: float
+          description: Unit price
           example: 4.0242
         sum:
           type: number
@@ -427,7 +445,7 @@ components:
         vat_amount:
           type: number
           format: float
-          description: Amount of VAT.
+          description: Total amount of VAT (with multiplier).
           example: 0.966
     InvoicePayments:
       type: object
@@ -534,10 +552,10 @@ components:
           type: string
           format: date
           description: ISO 8601 formatted date of contract paid till date.
-        reference:
+        customer_reference:
           type: string
           description: Customer reference
-          example: Customer defined reference number
+          example: Customer defined reference
         created:
           type: string
           format: date-time
