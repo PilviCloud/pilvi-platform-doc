@@ -122,6 +122,9 @@
 <li>
 <p><a href="#page_context-2"><code>Product</code> context</a></p>
 </li>
+<li>
+<p><a href="#page_context-2"><code>Invoice</code> context</a></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -368,6 +371,10 @@
 <td>Profile Delivery Zip Code</td>
 </tr>
 <tr>
+<td>profile.address.delivery.state</td>
+<td>Profile Delivery State</td>
+</tr>
+<tr>
 <td>profile.address.delivery.country</td>
 <td>Profile Delivery Country</td>
 </tr>
@@ -384,12 +391,20 @@
 <td>Profile Invoice  Zip Code</td>
 </tr>
 <tr>
+<td>profile.address.invoice.state</td>
+<td>Profile Invoice State</td>
+</tr>
+<tr>
 <td>profile.address.invoice.country</td>
 <td>Profile Invoice Country</td>
 </tr>
 <tr>
 <td>profile.services</td>
 <td>List of active Services on the Profile. Contains same variables as Service context</td>
+</tr>
+<tr>
+<td>profile.vatnumber</td>
+<td>Profile VAT Number</td>
 </tr>
 </tbody>
 </table>
@@ -492,6 +507,10 @@
 <tr>
 <td>order.products</td>
 <td>List of Products in Order. Contains same variables as Product context</td>
+</tr>
+<tr>
+<td>order.invoice</td>
+<td>Invoice from Order. Contains same variables as Invoice context</td>
 </tr>
 </tbody>
 </table>
@@ -623,6 +642,213 @@
 <td>product.pricewithvat</td>
 <td>Product VAT Price</td>
 <td>0.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_context-2"><code>Invoice</code> context</h3>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description / Value source</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invoice.id</td>
+<td>Invoice Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.no</td>
+<td>Invoice Number</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.sum</td>
+<td>Invoice sum</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>invoice.sumvat</td>
+<td>Invoice Sum of VAT</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>invoice.sumopen</td>
+<td>Invoice Sum Open</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>invoice.sumopenvat</td>
+<td>Invoice VAT Open</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>invoice.referenceno</td>
+<td>Invoice Reference Number</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.customerreference</td>
+<td>Invoice Customer Reference Number</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.items[].id</td>
+<td>InvoiceItem Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].description</td>
+<td>InvoiceItem Description</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.items[].service.id</td>
+<td>InvoiceItem Service Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].multiplier</td>
+<td>InvoiceItem Billing Interval Multiplier</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].price</td>
+<td>InvoiceItem Price</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].sum</td>
+<td>InvoiceItem Sum</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].sumvat</td>
+<td>InvoiceItem Sum VAT</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].unit</td>
+<td>InvoiceItem Billing Interval Unit</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.items[].recurring</td>
+<td>InvoiceItem Recurring Service</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>invoice.items[].vatrate</td>
+<td>InvoiceItem VAT Rate</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].vatamount</td>
+<td>InvoiceItem VAT Amount</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.address.seller.street</td>
+<td>Invoice Seller Address Street</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.seller.city</td>
+<td>Invoice Seller City</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.seller.zipcode</td>
+<td>Invoice Seller Zip Code</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.seller.state</td>
+<td>Invoice Seller State Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.seller.country</td>
+<td>Invoice Seller Country Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.invoice.street</td>
+<td>Invoice Address Street</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.invoice.city</td>
+<td>Invoice Address City</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.invoice.zipcode</td>
+<td>Invoice Address Zip Code</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.invoice.state</td>
+<td>Invoice Address State Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.invoice.country</td>
+<td>Invoice Seller Country Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.delivery.street</td>
+<td>Invoice Delivery Address Street</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.delivery.city</td>
+<td>Invoice Delivery City</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.delivery.zipcode</td>
+<td>Invoice Delivery Zip Code</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.delivery.state</td>
+<td>Invoice Delivery State Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.address.delivery.country</td>
+<td>Invoice Delivery Country Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.payments[].sum</td>
+<td>Invoice Payments Sum</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>invoice.payments[].processor.id</td>
+<td>Invoice Payments Processor Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>invoice.payments[].processor.code</td>
+<td>Invoice Payments Processor Code</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.payments[].processor.name</td>
+<td>Invoice Payments Processor Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>invoice.payments[].created</td>
+<td>Invoice Payments Created</td>
+<td>date</td>
 </tr>
 </tbody>
 </table>
