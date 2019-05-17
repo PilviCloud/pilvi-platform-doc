@@ -96,6 +96,17 @@
 <p><a href="#page_Message-templates">Message templates</a></p>
 <ul class="TableOfContents">
 <li>
+<p><a href="#page_Syntax">Syntax</a></p>
+</li>
+<li>
+<p><a href="#page_Templates">Templates</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_System-templates">System templates</a></p>
+</li>
+</ul>
+</li>
+<li>
 <p><a href="#page_Variables">Variables</a></p>
 <ul class="TableOfContents">
 <li>
@@ -131,10 +142,12 @@
 </li>
 </ul>    </div>
 </div>
-<h2 id="page_Variables">Variables</h2>
-<p>A variable is added in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
+<h2 id="page_Syntax">Syntax</h2>
+<p>Message templates use the <a href="https://mustache.github.io/mustache.5.html" class="Link--external">Mustache syntax</a></p>
+<p>Variables are used by wrapping them in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
 <p><strong>Note</strong> properties[].value needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
-<p>Variable availability varies between messsage template types. Available contexts define which variables are available.</p>
+<p>Variable availability varies messsage template types. Available contexts define which variables are available.</p>
+<h2 id="page_Templates">Templates</h2>
 <table>
 <thead>
 <tr>
@@ -179,12 +192,25 @@
 <td>SELLER_ORDER_CONFIRMATION</td>
 <td><code>User</code> <code>Profile</code> <code>Order</code></td>
 </tr>
+</tbody>
+</table>
+<h3 id="page_System-templates">System templates</h3>
+<p>System message templates are tied to critical processes of the Pilvi™ platform. Multiple versions of these templates cannot be created.</p>
+<table>
+<thead>
+<tr>
+<th>Message Template Type</th>
+<th>Context</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>SERVICE_EMAIL_PROVISION</td>
 <td><code>Profile</code> <code>Service</code></td>
 </tr>
 </tbody>
 </table>
+<h2 id="page_Variables">Variables</h2>
 <h3 id="page_All-templates">All templates</h3>
 <table>
 <thead>
