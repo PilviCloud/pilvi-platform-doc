@@ -162,6 +162,10 @@ components:
           type: string
           description: VAT ID Number
           example: FI123456789
+        einvoice_ovt:
+          type: string
+          description: Einvoice OVT
+          example: 003712345678abcde
         properties:
           type: array
           description: Profile Properties and their values.
