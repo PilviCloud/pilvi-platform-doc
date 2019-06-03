@@ -86,55 +86,55 @@
             </div>
 
     <div class="s-content">
-        <h1 id="page_Message-templates">Message templates</h1>
+        <h1 id="page_section_1">Message templates</h1>
 <p>Messages templates can be defined to be used with Action Rules. Pilvi™ provides a default set of templates for you to get started with, but you can modify the templates to your liking or create new templates.</p>
 <div class="TableOfContentsContainer">
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_Message-templates">Message templates</a></p>
+<p><a href="#page_section_1">Message templates</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Syntax">Syntax</a></p>
+<p><a href="#page_section_2">Syntax</a></p>
 </li>
 <li>
-<p><a href="#page_Templates">Templates</a></p>
+<p><a href="#page_section_3">Templates</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_System-templates">System templates</a></p>
+<p><a href="#page_section_4">System templates</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_Variables">Variables</a></p>
+<p><a href="#page_section_5">Variables</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_All-templates">All templates</a></p>
+<p><a href="#page_section_6">All templates</a></p>
 </li>
 <li>
-<p><a href="#page_Template-specific">Template specific</a></p>
+<p><a href="#page_section_7">Template specific</a></p>
 </li>
 <li>
-<p><a href="#page_context"><code>User</code> context</a></p>
+<p><a href="#page_section_8"><code>User</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Profile</code> context</a></p>
+<p><a href="#page_section_9"><code>Profile</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Service</code> context</a></p>
+<p><a href="#page_section_10"><code>Service</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Order</code> context</a></p>
+<p><a href="#page_section_11"><code>Order</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Contract</code> context</a></p>
+<p><a href="#page_section_12"><code>Contract</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Product</code> context</a></p>
+<p><a href="#page_section_13"><code>Product</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_context-2"><code>Invoice</code> context</a></p>
+<p><a href="#page_section_14"><code>Invoice</code> context</a></p>
 </li>
 </ul>
 </li>
@@ -142,12 +142,12 @@
 </li>
 </ul>    </div>
 </div>
-<h2 id="page_Syntax">Syntax</h2>
+<h2 id="page_section_2">Syntax</h2>
 <p>Message templates use the <a href="https://mustache.github.io/mustache.5.html" class="Link--external">Mustache syntax</a></p>
 <p>Variables are used by wrapping them in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
 <p><strong>Note</strong> properties[].value needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
 <p>Variable availability varies messsage template types. Available contexts define which variables are available.</p>
-<h2 id="page_Templates">Templates</h2>
+<h2 id="page_section_3">Templates</h2>
 <table>
 <thead>
 <tr>
@@ -194,7 +194,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_System-templates">System templates</h3>
+<h3 id="page_section_4">System templates</h3>
 <p>System message templates are tied to critical processes of the Pilvi™ platform. Multiple versions of these templates cannot be created.</p>
 <table>
 <thead>
@@ -210,8 +210,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="page_Variables">Variables</h2>
-<h3 id="page_All-templates">All templates</h3>
+<h2 id="page_section_5">Variables</h2>
+<h3 id="page_section_6">All templates</h3>
 <table>
 <thead>
 <tr>
@@ -302,7 +302,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_Template-specific">Template specific</h3>
+<h3 id="page_section_7">Template specific</h3>
 <table>
 <thead>
 <tr>
@@ -324,7 +324,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context"><code>User</code> context</h3>
+<h3 id="page_section_8"><code>User</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -355,7 +355,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Profile</code> context</h3>
+<h3 id="page_section_9"><code>Profile</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -433,6 +433,10 @@
 <td>Profile VAT Number</td>
 </tr>
 <tr>
+<td>profile.einvoiceovt</td>
+<td>Profile Electronic Invoice address (OVT)</td>
+</tr>
+<tr>
 <td>profile.properties[].name</td>
 <td>Profile Property Name</td>
 </tr>
@@ -446,7 +450,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Service</code> context</h3>
+<h3 id="page_section_10"><code>Service</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -493,7 +497,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Order</code> context</h3>
+<h3 id="page_section_11"><code>Order</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -552,7 +556,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Contract</code> context</h3>
+<h3 id="page_section_12"><code>Contract</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -591,7 +595,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Product</code> context</h3>
+<h3 id="page_section_13"><code>Product</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -683,7 +687,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_context-2"><code>Invoice</code> context</h3>
+<h3 id="page_section_14"><code>Invoice</code> context</h3>
 <table>
 <thead>
 <tr>

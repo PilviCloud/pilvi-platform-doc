@@ -91,22 +91,22 @@
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_Registration">Registration</a></p>
+<p><a href="#page_section_1">Registration</a></p>
 </li>
 <li>
-<p><a href="#page_Authentication">Authentication</a></p>
+<p><a href="#page_section_2">Authentication</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Credential-Authentication-Local">Credential Authentication (Local)</a></p>
+<p><a href="#page_section_3">Credential Authentication (Local)</a></p>
 </li>
 <li>
-<p><a href="#page_Credential-Authentication-to-External-Provider">Credential Authentication to External Provider</a></p>
+<p><a href="#page_section_4">Credential Authentication to External Provider</a></p>
 </li>
 <li>
-<p><a href="#page_Authentication-via-3rd-Party-Provider">Authentication via 3rd Party Provider</a></p>
+<p><a href="#page_section_5">Authentication via 3rd Party Provider</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Azure-AD-B2C">Azure AD B2C</a></p>
+<p><a href="#page_section_6">Azure AD B2C</a></p>
 </li>
 </ul>
 </li>
@@ -114,28 +114,28 @@
 </li>
 </ul>    </div>
 </div>
-<h1 id="page_Registration">Registration</h1>
+<h1 id="page_section_1">Registration</h1>
 <p>You can disallow the registration of new accounts on the Pilvi Platform via Preference: <code>SITE_REGISTRATION_ENABLED</code>.</p>
-<h1 id="page_Authentication">Authentication</h1>
+<h1 id="page_section_2">Authentication</h1>
 <p>Pilvi Platfrom has support for three different types methods for authenticating a User</p>
 <ul>
 <li>Credential Authentication (Local)</li>
 <li>Credential Authentication to a External Provider</li>
 <li>Authentication via 3rd Party Provider</li>
 </ul>
-<h2 id="page_Credential-Authentication-Local">Credential Authentication (Local)</h2>
+<h2 id="page_section_3">Credential Authentication (Local)</h2>
 <p>Pilvi Platform's local User database. Authentication is performed against the Pilvi User database. <strong>Enabled by Default.</strong></p>
 <p>Can be disabled via Preference: <code>AUTH_PROVIDER_LOCAL_ENABLED</code></p>
-<h2 id="page_Credential-Authentication-to-External-Provider">Credential Authentication to External Provider</h2>
+<h2 id="page_section_4">Credential Authentication to External Provider</h2>
 <p>Pilvi Platfrom forwards authentication requests to an External Provider, such as Active Directory or LDAP.</p>
 <p><strong>Contact sales if interested in AD/LDAP authentication</strong></p>
-<h2 id="page_Authentication-via-3rd-Party-Provider">Authentication via 3rd Party Provider</h2>
+<h2 id="page_section_5">Authentication via 3rd Party Provider</h2>
 <p>Pilvi Platfrom redirects the User to a 3rd Party Providers site, where the actual login (or register) action is performed. After a succesful authentication, the User is forwarded back to Pilvi Platform.</p>
 <p>Currently Supported 3rd Party Authentication Providers are:</p>
 <ul>
 <li>Azure AD B2C</li>
 </ul>
-<h3 id="page_Azure-AD-B2C">Azure AD B2C</h3>
+<h3 id="page_section_6">Azure AD B2C</h3>
 <p>Azure AD B2C is a cloud identity and access managmenet service, which allows you to connect various different identity providers. Azure AD B2C allows your users to access your service using social media accounts.</p>
 <p>To enable an Azure AD B2C integration, you'll need to enable it from the Settings.</p>
 <p>Azure AD B2C integration currently support Login and Register.</p>

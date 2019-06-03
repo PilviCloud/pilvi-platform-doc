@@ -86,41 +86,41 @@
             </div>
 
     <div class="s-content">
-        <h1 id="page_Pages">Pages</h1>
+        <h1 id="page_section_1">Pages</h1>
 <div class="TableOfContentsContainer">
     <h4 class="TableOfContentsContainer__title">Table of Contents</h4>
     <div class="TableOfContentsContainer__content">
         <ul class="TableOfContents">
 <li>
-<p><a href="#page_Pages">Pages</a></p>
+<p><a href="#page_section_1">Pages</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Variables">Variables</a></p>
+<p><a href="#page_section_2">Variables</a></p>
 </li>
 <li>
-<p><a href="#page_Side-menu-links">Side menu links</a></p>
+<p><a href="#page_section_3">Side menu links</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_System-Pages">System Pages</a></p>
+<p><a href="#page_section_4">System Pages</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Default-contents">Default contents</a></p>
+<p><a href="#page_section_5">Default contents</a></p>
 </li>
 <li>
-<p><a href="#page_System-Page-Variables">System Page Variables</a></p>
+<p><a href="#page_section_6">System Page Variables</a></p>
 </li>
 <li>
-<p><a href="#page_Sections">Sections</a></p>
+<p><a href="#page_section_7">Sections</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_Cart-Ready-page">Cart Ready page</a></p>
+<p><a href="#page_section_8">Cart Ready page</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_Examples">Examples</a></p>
+<p><a href="#page_section_9">Examples</a></p>
 </li>
 </ul>
 </li>
@@ -142,7 +142,7 @@
 <li>contact</li>
 </ul>
 <p>These can always be reset back to the default title and content with &quot;Reset page&quot;. Reset will affect all locales of the Page.</p>
-<h2 id="page_Variables">Variables</h2>
+<h2 id="page_section_2">Variables</h2>
 <p>Variables can be used in the Page title and content.</p>
 <p>A variable is added in double-braces, e.g. {{company.name}}.
 See list of available variables below:</p>
@@ -208,16 +208,16 @@ See list of available variables below:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="page_Side-menu-links">Side menu links</h2>
+<h2 id="page_section_3">Side menu links</h2>
 <p>Side menu links may be added for privacy-policy, terms-of-use and contact Pages.</p>
 <p>See <a href="Preferences.html">Preferences</a> starting with <code>FRONTEND_SIDEMENU_LINK_</code>.</p>
 <p><img src="../../images/side_menu_footer_links.png" alt="" /></p>
-<h1 id="page_System-Pages">System Pages</h1>
+<h1 id="page_section_4">System Pages</h1>
 <p>Many System Pages can be customized by the Site admin. For example Product Detail, Product Configure, Login, Register, and Cart pages are supported. Each System Page can have several System Page Blocks, typically a Top and a Bottom block. The Top block is located just below the header and the Bottom block below the other content.</p>
 <p>The contents of the System Page Blocks can be edited in Manager as localized WYSIWYG fields.</p>
-<h2 id="page_Default-contents">Default contents</h2>
+<h2 id="page_section_5">Default contents</h2>
 <p>Some of the System Page Blocks have default contents. These contents can be edited similarly to any block.</p>
-<h2 id="page_System-Page-Variables">System Page Variables</h2>
+<h2 id="page_section_6">System Page Variables</h2>
 <p>Variables can be used in System Page Blocks in the same way as in Pages. In addition to the Pages variables, System Pages may have page specific variables available. On Product Configure and Product Detail pages the following variables are available:</p>
 <table>
 <thead>
@@ -245,14 +245,14 @@ See list of available variables below:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="page_Sections">Sections</h2>
+<h2 id="page_section_7">Sections</h2>
 <p>A System Page Block may contain sections, which visibility depends on the section variable values. The system defines these section variables on some of the System Pages. A section consists of section start, content, and section end. For example:</p>
 <pre><code>{{#section.order_fail}}
 Oops, something went wrong
 {{/section.order_fail}}
 </code></pre>
 <p>The text is included only if variable section.order_fail value is true. Sections may be nested.</p>
-<h3 id="page_Cart-Ready-page">Cart Ready page</h3>
+<h3 id="page_section_8">Cart Ready page</h3>
 <p>On this page, when section.order_success is true, the order was received successfully. Only one of the sections inside order_success is true at a time.</p>
 <table>
 <thead>
@@ -272,7 +272,7 @@ Oops, something went wrong
 </tr>
 </tbody>
 </table>
-<h2 id="page_Examples">Examples</h2>
+<h2 id="page_section_9">Examples</h2>
 <p>See the default System Page Block contents, for example Product Configure Top block. For more advanced example, see Cart Ready Top block.</p>
     </div>
 
