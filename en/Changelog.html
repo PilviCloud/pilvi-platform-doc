@@ -87,7 +87,47 @@
 
     <div class="s-content">
         <h1 id="page_section_1">Pilvi™ Platform Changelog</h1>
-<h2 id="page_section_2">(2019-06-03)</h2>
+<h2 id="page_section_2">(2019-08-13)</h2>
+<p><strong>Platform version 1.7.0</strong></p>
+<p>Changes</p>
+<ul>
+<li>T628 Maintenance mode for Shop
+<ul>
+<li>Shop section can now be put into maintenance mode. The maintenance mode disables the Shop section</li>
+</ul>
+</li>
+<li>T615 Registration page layout changes
+<ul>
+<li>Regular/Business user selection is now done in the top of the page. Default selection may be adjusted via Preference.</li>
+</ul>
+</li>
+<li>T613 Custom content may now be added above and below of Product properties.</li>
+<li>T140 Trial period is now defined in days</li>
+<li>T629 Preferences for controlling VAT-toggle behaviour</li>
+<li>T617 Added support for browser form autocompletion</li>
+<li>T590 Show Product description text and price in the small product recommendation listings</li>
+<li>T590 Added print button for Invoices. Adjustments for print styles.</li>
+</ul>
+<p>Fixes</p>
+<ul>
+<li>T622 Service Status Monitor incorrectly activates Services when their Invoice is rebated</li>
+<li>T547 Property Selectbox now works more predictably with required/optional types
+<ul>
+<li>A property has no option selected initially. For required property, a selection has to be made before user can proceed.</li>
+</ul>
+</li>
+<li>T580 Profile owner cannot be removed from the profile or be demoted</li>
+<li>T618 Fix for event notifications not closing correctly when clicked</li>
+<li>T623 Fix for Property Value Type Range rendering with incorrect initial value when coming back to edit the Product</li>
+<li>T616 Removed <em>Register</em> System Page Block from Cart Customer login page</li>
+<li>T620 Fix for Slider component not working correctly with touch events</li>
+<li>T602 VATID is now hidden from users outside the EU</li>
+<li>T473 Updated PAITA endpoints to match the latest spec</li>
+<li>Fix for Product grid product rendering for products shown after pressing the <em>Show more</em> button</li>
+<li>Fix for an issue where necessary Profile data was not ready during the checkout process</li>
+<li>Fix for anonymous user VATID handling.</li>
+</ul>
+<h2 id="page_section_3">(2019-06-03)</h2>
 <p><strong>Platform version 1.6.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -114,7 +154,7 @@
 <li>
 <strong>Manager</strong> Property validations now shown correctly in listings</li>
 </ul>
-<h2 id="page_section_3">(2019-05-27)</h2>
+<h2 id="page_section_4">(2019-05-27)</h2>
 <p><strong>Platform version 1.5.12</strong></p>
 <p>Changes</p>
 <ul>
@@ -128,7 +168,7 @@
 <li>EmailSender failed to send email in some cases</li>
 <li>Product clone ignored externally managed setting</li>
 </ul>
-<h2 id="page_section_4">(2019-04-29)</h2>
+<h2 id="page_section_5">(2019-04-29)</h2>
 <p><strong>Platform version 1.5.7</strong></p>
 <p>Changes</p>
 <ul>
@@ -143,7 +183,7 @@
 <li>Fix for checkout process of non-configurable Products. Redirected to wrong Page</li>
 <li>Style fixes for checkout buttons</li>
 </ul>
-<h2 id="page_section_5">(2019-04-17)</h2>
+<h2 id="page_section_6">(2019-04-17)</h2>
 <p><strong>Platform version 1.5.6</strong></p>
 <p>Fixes</p>
 <ul>
@@ -153,20 +193,20 @@
 <li>Fix for closed Dialogs not being closed correctly and resulting in weird looking dialog UI artifacts.</li>
 <li>Updated email validation messages to mention that the address might be in use already</li>
 </ul>
-<h2 id="page_section_6">(2019-04-12)</h2>
+<h2 id="page_section_7">(2019-04-12)</h2>
 <p><strong>Platform version 1.5.5</strong></p>
 <p>Fixes</p>
 <ul>
 <li>Webhook: Added missing profile data under the order</li>
 <li>Trim Profile Property value type STRING leading and trailing whitespaces</li>
 </ul>
-<h2 id="page_section_7">(2019-04-11)</h2>
+<h2 id="page_section_8">(2019-04-11)</h2>
 <p><strong>Platform version 1.5.4</strong></p>
 <p>Changes</p>
 <ul>
 <li>Payex: Canceling the payment now returns to Cart instead of the Shop frontpage</li>
 </ul>
-<h2 id="page_section_8">(2019-04-10)</h2>
+<h2 id="page_section_9">(2019-04-10)</h2>
 <p><strong>Platform version 1.5.3</strong></p>
 <p>Changes</p>
 <ul>
@@ -176,7 +216,7 @@
 <ul>
 <li>Fix for not correctly handling all payment success cases</li>
 </ul>
-<h2 id="page_section_9">(2019-04-09)</h2>
+<h2 id="page_section_10">(2019-04-09)</h2>
 <p><strong>Platform version 1.5.2</strong></p>
 <p>Changes</p>
 <ul>
@@ -196,7 +236,7 @@
 <li>Fix for email Property values not having localized values with Property value type Selectbox and Selectbox multiple</li>
 <li>T570 Fix for Product description sometimes not showing correctly on Shop Product listings</li>
 </ul>
-<h2 id="page_section_10">(2019-04-04)</h2>
+<h2 id="page_section_11">(2019-04-04)</h2>
 <p><strong>Platform version 1.5.1</strong></p>
 <p>Fixes</p>
 <ul>
@@ -208,7 +248,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="page_section_11">(2019-04-03)</h2>
+<h2 id="page_section_12">(2019-04-03)</h2>
 <p><strong>Platform version 1.5.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -219,7 +259,7 @@
 <li>Product Properties moved under Catalog from the Settings</li>
 <li>Hide decimal zeros if price can be presented as an integer</li>
 </ul>
-<h2 id="page_section_12">(2019-03-27)</h2>
+<h2 id="page_section_13">(2019-03-27)</h2>
 <p><strong>Platform version 1.4.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -243,7 +283,7 @@
 <li>Removed unnecassary Name and Email fields from the Invoice Payment address creation</li>
 <li>Trim leading and trailing whitespaces from name and email during Sign up</li>
 </ul>
-<h2 id="page_section_13">(2019-03-15)</h2>
+<h2 id="page_section_14">(2019-03-15)</h2>
 <p><strong>Platform version 1.3.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -258,7 +298,7 @@
 <li>Show asterisk characters for all required fields on Sign up</li>
 <li>Small fixes, translation corrections</li>
 </ul>
-<h2 id="page_section_14">(2019-03-13)</h2>
+<h2 id="page_section_15">(2019-03-13)</h2>
 <p><strong>Platform version 1.2.2</strong></p>
 <p>Changes</p>
 <ul>
@@ -272,14 +312,14 @@
 <li>Enhanced HTML escaping on the checkout process</li>
 <li>Cart summary adjustments</li>
 </ul>
-<h2 id="page_section_15">(2019-03-06)</h2>
+<h2 id="page_section_16">(2019-03-06)</h2>
 <p><strong>Platform version 1.2.1</strong></p>
 <p>Changes</p>
 <ul>
 <li>Webhook format fixes</li>
 <li>ORDER_ACTIVATED Action Rule Condition is now available</li>
 </ul>
-<h2 id="page_section_16">(2019-02-26)</h2>
+<h2 id="page_section_17">(2019-02-26)</h2>
 <p><strong>Platform version 1.2.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -299,7 +339,7 @@
 <li>T418 Fix for default email template client compatibility</li>
 <li>Small UX fixes</li>
 </ul>
-<h2 id="page_section_17">(2019-01-30)</h2>
+<h2 id="page_section_18">(2019-01-30)</h2>
 <p><strong>Platform version 1.1.2</strong></p>
 <p>Changes</p>
 <ul>
@@ -321,7 +361,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="page_section_18">(2019-01-15)</h2>
+<h2 id="page_section_19">(2019-01-15)</h2>
 <p><strong>Platform version 1.1.1</strong></p>
 <p>Fixes</p>
 <ul>
@@ -331,7 +371,7 @@
 <li>Fixed an error that occurred when enabling Google Tag Manager</li>
 <li>Register page is no longer shown when SITE_REGISTRATION_ENABLED=false</li>
 </ul>
-<h2 id="page_section_19">(2019-01-08)</h2>
+<h2 id="page_section_20">(2019-01-08)</h2>
 <p><strong>Platform version 1.1.0</strong></p>
 <p>Changes</p>
 <ul>
@@ -351,7 +391,7 @@
 <li>Fix for registering via Azure AD B2C with Facebook account.</li>
 </ul>
 <hr />
-<h2 id="page_section_20">(2018-12-18)</h2>
+<h2 id="page_section_21">(2018-12-18)</h2>
 <p>Changes</p>
 <ul>
 <li>T423 <a href="Integrations/Site_Integrations.html#page_section_3">Azure AD B2C integration</a>
@@ -366,7 +406,7 @@
 <li>T479 Fixed an error that prevented the add of new Properties in certain edge cases.</li>
 </ul>
 <hr />
-<h2 id="page_section_21">(2018-10-14)</h2>
+<h2 id="page_section_22">(2018-10-14)</h2>
 <p>Changes</p>
 <ul>
 <li>T384 Allow Categories to be sorted on the side menu</li>
@@ -378,7 +418,7 @@
 <li>T416 isVatIncluded value sometimes gives wrong result</li>
 </ul>
 <hr />
-<h2 id="page_section_22">(2018-09-14)</h2>
+<h2 id="page_section_23">(2018-09-14)</h2>
 <p>Changes</p>
 <ul>
 <li>T372 Vat id validation</li>
@@ -389,13 +429,13 @@
 <li>T375 Paper cut fixes. Many small fixes for usability.</li>
 </ul>
 <hr />
-<h2 id="page_section_23">(2018-09-03)</h2>
+<h2 id="page_section_24">(2018-09-03)</h2>
 <p>Changes</p>
 <ul>
 <li>T371 New common message variables site.domain and site.shop.url</li>
 </ul>
 <hr />
-<h2 id="page_section_24">(2018-08-20)</h2>
+<h2 id="page_section_25">(2018-08-20)</h2>
 <p>Changes</p>
 <ul>
 <li>T370	Private Profile is always created for every new User. Primary Invoice Address is added for new and existing Profile.</li>
@@ -404,7 +444,7 @@
 <li>Improved price update to be faster</li>
 </ul>
 <hr />
-<h2 id="page_section_25">(2018-08-08)</h2>
+<h2 id="page_section_26">(2018-08-08)</h2>
 <p>Changes T88</p>
 <ul>
 <li>Added Site specific numbering for top level objects (Services,Profile,Product,Orders,Invoices)</li>
@@ -445,7 +485,7 @@
 <li>a lot of small fixes here and there</li>
 </ul>
 <hr />
-<h2 id="page_section_26">(2018-05-24)</h2>
+<h2 id="page_section_27">(2018-05-24)</h2>
 <p>Changes</p>
 <ul>
 <li>T281 Added Zapier integration. Triggers for new Services, Product, Customer Profiles</li>
