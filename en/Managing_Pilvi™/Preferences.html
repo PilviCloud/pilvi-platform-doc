@@ -100,16 +100,19 @@
 <p><a href="#page_section_3">User Authentication and Registration</a></p>
 </li>
 <li>
-<p><a href="#page_section_4">Service life time</a></p>
+<p><a href="#page_section_4">Profiles</a></p>
 </li>
 <li>
-<p><a href="#page_section_5">UI and Features</a></p>
+<p><a href="#page_section_5">Service life time</a></p>
 </li>
 <li>
-<p><a href="#page_section_6">Analytics</a></p>
+<p><a href="#page_section_6">UI and Features</a></p>
 </li>
 <li>
-<p><a href="#page_section_7">Marketing Automation</a></p>
+<p><a href="#page_section_7">Analytics</a></p>
+</li>
+<li>
+<p><a href="#page_section_8">Marketing Automation</a></p>
 </li>
 </ul>
 </li>
@@ -189,17 +192,7 @@
 <tr>
 <td>DEFAULT_LOCALE_CODE</td>
 <td>STRING</td>
-<td>Default locale for the Site to use for root URL. Default en_US.</td>
-</tr>
-<tr>
-<td>SITE_REGISTRATION_BUSINESS_USER_ENABLED</td>
-<td>BOOLEAN</td>
-<td>Enable registration as a business user.</td>
-</tr>
-<tr>
-<td>SITE_REGISTRATION_BUSINESS_USER_DEFAULT</td>
-<td>BOOLEAN</td>
-<td>Default to registering as a business user.</td>
+<td>Default locale for the Site to use for root URL. Supported values: fi_FI, en_US. Default en_US.</td>
 </tr>
 </tbody>
 </table>
@@ -217,6 +210,16 @@
 <td>SITE_REGISTRATION_ENABLED</td>
 <td>BOOLEAN</td>
 <td>Allow new users to register to the Site</td>
+</tr>
+<tr>
+<td>SITE_REGISTRATION_BUSINESS_USER_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable registration as a business user.</td>
+</tr>
+<tr>
+<td>SITE_REGISTRATION_BUSINESS_USER_DEFAULT</td>
+<td>BOOLEAN</td>
+<td>Default to registering as a business user.</td>
 </tr>
 <tr>
 <td>AUTH_PROVIDER_LOCAL_ENABLED</td>
@@ -255,7 +258,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="page_section_4">Service life time</h2>
+<h2 id="page_section_4">Profiles</h2>
+<table>
+<thead>
+<tr>
+<th>Preference Name</th>
+<th>Value Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROFILE_INITIAL_ACCOUNT_BALANCE</td>
+<td>NUMBER</td>
+<td>Initial amount of account balance for new Profiles</td>
+</tr>
+</tbody>
+</table>
+<h2 id="page_section_5">Service life time</h2>
 <table>
 <thead>
 <tr>
@@ -282,7 +302,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="page_section_5">UI and Features</h2>
+<h2 id="page_section_6">UI and Features</h2>
 <table>
 <thead>
 <tr>
@@ -348,16 +368,6 @@
 <td>URL of an external Contact page.</td>
 </tr>
 <tr>
-<td>PAYMENT_METHOD_INVOICE_ENABLED</td>
-<td>BOOLEAN</td>
-<td>Show Invoice as a payment option</td>
-</tr>
-<tr>
-<td>PAYMENT_METHOD_STRIPE_ENABLED</td>
-<td>BOOLEAN</td>
-<td>Show Stripe as a payment option</td>
-</tr>
-<tr>
 <td>FRONTEND_SPLIT_USER_NAMES_ENABLED</td>
 <td>BOOLEAN</td>
 <td>Show different input fields for firstname and lastname in registering</td>
@@ -382,9 +392,19 @@
 <td>BOOLEAN</td>
 <td>Show VAT toggle in the sidemenu.</td>
 </tr>
+<tr>
+<td>PAYMENT_METHOD_INVOICE_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Show Invoice as a payment option</td>
+</tr>
+<tr>
+<td>PAYMENT_METHOD_STRIPE_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Show Stripe as a payment option</td>
+</tr>
 </tbody>
 </table>
-<h2 id="page_section_6">Analytics</h2>
+<h2 id="page_section_7">Analytics</h2>
 <table>
 <thead>
 <tr>
@@ -446,7 +466,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="page_section_7">Marketing Automation</h2>
+<h2 id="page_section_8">Marketing Automation</h2>
 <table>
 <thead>
 <tr>
