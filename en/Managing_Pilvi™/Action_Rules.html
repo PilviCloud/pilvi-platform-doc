@@ -149,6 +149,14 @@ You can of course alter it as you see fit.</p>
 <td>Send email &quot;Service expired because canceled&quot;</td>
 <td>Notify the Customer when a Service is expired, as was requested by the Customer.</td>
 </tr>
+<tr>
+<td>Send email &quot;Invoice payment successful&quot;</td>
+<td>Notify the Customer when the Service has been paid with saved recurring payment method in off-session.</td>
+</tr>
+<tr>
+<td>Send email &quot;Invoice payment failed&quot;</td>
+<td>Notify the Customer when the payment couldn't be completed.</td>
+</tr>
 </tbody>
 </table>
 <h1 id="page_section_2">Conditions</h1>
@@ -231,6 +239,16 @@ You can of course alter it as you see fit.</p>
 <td>X_TIME_UNITS_SINCE_USERS_LAST_LOGIN_TO_PILVI_PLATFORM</td>
 <td>Scheduled</td>
 <td>NUMBER</td>
+</tr>
+<tr>
+<td>INVOICE_RECURRING_PAYMENT_SUCCESS</td>
+<td>Immediately</td>
+<td></td>
+</tr>
+<tr>
+<td>INVOICE_RECURRING_PAYMENT_FAILURE</td>
+<td>Immediately</td>
+<td></td>
 </tr>
 </tbody>
 </table>

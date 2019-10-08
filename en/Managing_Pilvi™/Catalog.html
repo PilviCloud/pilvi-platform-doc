@@ -113,21 +113,24 @@
 <li>
 <p><a href="#page_section_7">Relations</a></p>
 </li>
+<li>
+<p><a href="#page_section_8">Importing Excel Files</a></p>
+</li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_8">Categories</a></p>
+<p><a href="#page_section_9">Categories</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_9">Category has a layout that affects how the Category and its products are shown on the page.</a></p>
+<p><a href="#page_section_10">Category has a layout that affects how the Category and its products are shown on the page.</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_10">Regions</a></p>
+<p><a href="#page_section_11">Regions</a></p>
 </li>
 <li>
-<p><a href="#page_section_11">Brands</a></p>
+<p><a href="#page_section_12">Brands</a></p>
 </li>
 </ul>    </div>
 </div>
@@ -198,10 +201,149 @@
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_8">Categories</h1>
+<h2 id="page_section_8">Importing Excel Files</h2>
+<p>Products can be imported from an Excel file. The file must be in Excel 97 - 2003 (.XLS) format, and contain 15 columns described below. The data must begin from <strong>row 2</strong>.</p>
+<p><strong>Excel File Layout</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Column</th>
+<th>Mandatory</th>
+<th>Default</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Product No.</td>
+<td></td>
+<td></td>
+<td>100</td>
+<td>Product number</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Locale</td>
+<td></td>
+<td></td>
+<td>fi_FI</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Localized name</td>
+<td>yes</td>
+<td></td>
+<td>Microsoft Office</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Localized plan</td>
+<td></td>
+<td></td>
+<td>Business</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Localized description</td>
+<td></td>
+<td></td>
+<td>Web user interfaces of: Outlook, Word, Excel, PowerPoint, OneNote.</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>API</td>
+<td></td>
+<td>PAITA</td>
+<td>PAITA</td>
+<td>Options: PAITA, EMAIL</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Currency</td>
+<td></td>
+<td>EUR</td>
+<td>EUR</td>
+<td>Options: EUR, USD</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Price (in Currency)</td>
+<td></td>
+<td></td>
+<td>8.50</td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Price interval</td>
+<td></td>
+<td></td>
+<td>P1M</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Billing interval min</td>
+<td></td>
+<td></td>
+<td>P1M</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>Billing interval max</td>
+<td></td>
+<td></td>
+<td>P1Y</td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>Trial period (days)</td>
+<td></td>
+<td>0</td>
+<td>30</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>Region</td>
+<td></td>
+<td>global</td>
+<td>global</td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td>Brand</td>
+<td></td>
+<td></td>
+<td>Microsoft</td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td>Image URL</td>
+<td></td>
+<td></td>
+<td>http://www.myshop.fi/pictures/apic.png</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>If the product number is enclosed, and a product with the same number exists in the database, it will be replaced. Otherwise the row will be imported as a new product. If the product number cell is left empty, the number will be generated, and that row will be imported as a new product.</p>
+<p>If the data has been succesfully imported, the number of products processed will be displayed. If not, an error dialog will point at which rows and columns there is invalid data.</p>
+<h1 id="page_section_9">Categories</h1>
 <p>Categories allows the Products to be grouped in the Shop with a criteria of your choosing.</p>
 <p>By default, categories are shown on the sidemenu in the Shop, but you can also choose to not show them in the menu.</p>
-<h2 id="page_section_9">Category has a layout that affects how the Category and its products are shown on the page.</h2>
+<h2 id="page_section_10">Category has a layout that affects how the Category and its products are shown on the page.</h2>
 <p><strong>Category layouts</strong></p>
 <table>
 <thead>
@@ -221,9 +363,9 @@
 </tr>
 </tbody>
 </table>
-<h1 id="page_section_10">Regions</h1>
+<h1 id="page_section_11">Regions</h1>
 <p>Regions are another means of grouping your Products based on geographical location. Regions are shown separately from Categories in the Side menu.</p>
-<h1 id="page_section_11">Brands</h1>
+<h1 id="page_section_12">Brands</h1>
 <p>Regions are another means of grouping your Products based on the provider of the Product. Brands are shown separately from Categories in the Side menu.</p>
     </div>
 

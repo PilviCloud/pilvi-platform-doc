@@ -136,6 +136,9 @@
 <li>
 <p><a href="#page_section_14"><code>Invoice</code> context</a></p>
 </li>
+<li>
+<p><a href="#page_section_15"><code>Payment</code> context</a></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -191,6 +194,14 @@
 <tr>
 <td>SELLER_ORDER_CONFIRMATION</td>
 <td><code>User</code> <code>Profile</code> <code>Order</code></td>
+</tr>
+<tr>
+<td>INVOICE_PAYMENT_SUCCESSFUL</td>
+<td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
+</tr>
+<tr>
+<td>INVOICE_PAYMENT_FAILED</td>
+<td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
 </tr>
 </tbody>
 </table>
@@ -716,6 +727,16 @@
 <td>number</td>
 </tr>
 <tr>
+<td>invoice.issuedate</td>
+<td>Invoice Issue Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>invoice.duedate</td>
+<td>Invoice Due Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
 <td>invoice.sum</td>
 <td>Invoice sum</td>
 <td>0.00</td>
@@ -876,29 +897,44 @@
 <td>string</td>
 </tr>
 <tr>
-<td>invoice.payments[].sum</td>
-<td>Invoice Payments Sum</td>
-<td>0.00</td>
+<td>invoice.payments</td>
+<td>List of Invoice Payments.  Contains same variables as Payment context</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_section_15"><code>Payment</code> context</h3>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description / Value source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>payment.sum</td>
+<td>Sum of Payment</td>
 </tr>
 <tr>
-<td>invoice.payments[].processor.id</td>
-<td>Invoice Payments Processor Id</td>
-<td>number</td>
+<td>payment.processor.id</td>
+<td>Payment processor ID</td>
 </tr>
 <tr>
-<td>invoice.payments[].processor.code</td>
-<td>Invoice Payments Processor Code</td>
-<td>string</td>
+<td>payment.processor.code</td>
+<td>Payment processor code</td>
 </tr>
 <tr>
-<td>invoice.payments[].processor.name</td>
-<td>Invoice Payments Processor Name</td>
-<td>string</td>
+<td>payment.processor.name</td>
+<td>Payment processor name</td>
 </tr>
 <tr>
-<td>invoice.payments[].created</td>
-<td>Invoice Payments Created</td>
-<td>date</td>
+<td>payment.created</td>
+<td>Payment creation time, localized</td>
+</tr>
+<tr>
+<td>payment.message</td>
+<td>Payment message, if exists. Can contain additional details of the payment for ex. when payment needs customer authentication or payment has failed</td>
 </tr>
 </tbody>
 </table>
