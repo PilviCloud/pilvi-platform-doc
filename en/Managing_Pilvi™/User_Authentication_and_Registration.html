@@ -139,7 +139,7 @@
 <p>Azure AD B2C is a cloud identity and access managmenet service, which allows you to connect various different identity providers. Azure AD B2C allows your users to access your service using social media accounts.</p>
 <p>To enable an Azure AD B2C integration, you'll need to enable it from the Settings.</p>
 <p>Azure AD B2C integration currently support Login and Register.</p>
-<p>In Manager</p>
+<p><strong>In Manager</strong></p>
 <blockquote>
 <ol>
 <li>Go to Settings, open Analytics tab.</li>
@@ -156,11 +156,43 @@
 <code>AUTH_PROVIDER_AZURE_AD_B2C_POLICY_FOR_LOGIN</code>.</li>
 <li>
 <code>AUTH_PROVIDER_AZURE_AD_B2C_POLICY_FOR_REGISTER</code>.</li>
+<li>
+<code>AUTH_PROVIDER_AZURE_AD_B2C_POLICY_FOR_USER_EDIT</code>.</li>
+<li>
+<code>AUTH_PROVIDER_AZURE_AD_B2C_POLICY_FOR_USER_PASSWORD_RESET</code>.</li>
 </ul>
 <ol start="3">
 <li>Finally, enable <code>AUTH_PROVIDER_AZURE_AD_B2C_ENABLED</code>.</li>
 </ol>
 </blockquote>
+<p><strong>In Your Azure Directory</strong></p>
+<ul>
+<li>Create a B2C Tenant.</li>
+<li>Register your Pilvi Site as a &quot;web application&quot;.
+<ul>
+<li>Write down your Application ID, you'll need to fill in that ID in Manager as AUTH_PROVIDER_AZURE_AD_B2C_CLIENT_ID.</li>
+</ul>
+</li>
+<li>Create User flows Sign up and sign in, Profile editing and Password reset.
+<ul>
+<li>Use unique names for the User flows, e.g. &quot;B2C_signup&quot;, &quot;B2C_edit&quot;, &quot;B2C_reset&quot;.</li>
+<li>In settings of each User flow, activate
+<ul>
+<li>Identity providers: Email signup</li>
+<li>User attributes: Email Address, Given Name, Surname</li>
+<li>Application claims: Identity Provider, Email Address, Identity Provider Access Token.</li>
+<li>If you have a custom layout (HTML page), fill in the settings in Page layouts.</li>
+<li>In Languages, make language and locale settings for each User Flow</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Tips:</p>
+<ul>
+<li>If you have trouble finding the right page in the Azure Portal, try using the Search box.</li>
+<li>There are good tutorials at <a href="https://docs.microsoft.com" class="Link--external">https://docs.microsoft.com</a>, you'll find links to these right there in the Azure Portal.</li>
+</ul>
     </div>
 
         <nav>

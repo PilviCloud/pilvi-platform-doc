@@ -99,45 +99,48 @@
 <p><a href="#page_section_2">Syntax</a></p>
 </li>
 <li>
-<p><a href="#page_section_3">Templates</a></p>
+<p><a href="#page_section_3">Localization</a></p>
+</li>
+<li>
+<p><a href="#page_section_4">Templates</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_4">System templates</a></p>
+<p><a href="#page_section_5">System templates</a></p>
 </li>
 </ul>
 </li>
 <li>
-<p><a href="#page_section_5">Variables</a></p>
+<p><a href="#page_section_6">Variables</a></p>
 <ul class="TableOfContents">
 <li>
-<p><a href="#page_section_6">All templates</a></p>
+<p><a href="#page_section_7">All templates</a></p>
 </li>
 <li>
-<p><a href="#page_section_7">Template specific</a></p>
+<p><a href="#page_section_8">Template specific</a></p>
 </li>
 <li>
-<p><a href="#page_section_8"><code>User</code> context</a></p>
+<p><a href="#page_section_9"><code>User</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_9"><code>Profile</code> context</a></p>
+<p><a href="#page_section_10"><code>Profile</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_10"><code>Service</code> context</a></p>
+<p><a href="#page_section_11"><code>Service</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_11"><code>Order</code> context</a></p>
+<p><a href="#page_section_12"><code>Order</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_12"><code>Contract</code> context</a></p>
+<p><a href="#page_section_13"><code>Contract</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_13"><code>Product</code> context</a></p>
+<p><a href="#page_section_14"><code>Product</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_14"><code>Invoice</code> context</a></p>
+<p><a href="#page_section_15"><code>Invoice</code> context</a></p>
 </li>
 <li>
-<p><a href="#page_section_15"><code>Payment</code> context</a></p>
+<p><a href="#page_section_16"><code>Payment</code> context</a></p>
 </li>
 </ul>
 </li>
@@ -150,7 +153,15 @@
 <p>Variables are used by wrapping them in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
 <p><strong>Note</strong> properties[].value needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
 <p>Variable availability varies messsage template types. Available contexts define which variables are available.</p>
-<h2 id="page_section_3">Templates</h2>
+<h2 id="page_section_3">Localization</h2>
+<p>Each template can be localized for available languages.</p>
+<p>The locale in which the emails are sent, are chosen dynamically based on the</p>
+<ul>
+<li>language that the customer is currently using on the Shop/Console/Manager.</li>
+<li>or by a user specific language value, in cases where the email sending originates from a background process where it doesn't relate to any UI action.</li>
+<li>fall back to Site default value <code>DEFAULT_LOCALE_CODE</code> (usually English)</li>
+</ul>
+<h2 id="page_section_4">Templates</h2>
 <table>
 <thead>
 <tr>
@@ -205,7 +216,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_4">System templates</h3>
+<h3 id="page_section_5">System templates</h3>
 <p>System message templates are tied to critical processes of the Pilvi™ platform. Multiple versions of these templates cannot be created.</p>
 <table>
 <thead>
@@ -221,8 +232,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="page_section_5">Variables</h2>
-<h3 id="page_section_6">All templates</h3>
+<h2 id="page_section_6">Variables</h2>
+<h3 id="page_section_7">All templates</h3>
 <table>
 <thead>
 <tr>
@@ -313,7 +324,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_7">Template specific</h3>
+<h3 id="page_section_8">Template specific</h3>
 <table>
 <thead>
 <tr>
@@ -335,7 +346,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_8"><code>User</code> context</h3>
+<h3 id="page_section_9"><code>User</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -366,7 +377,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_9"><code>Profile</code> context</h3>
+<h3 id="page_section_10"><code>Profile</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -461,7 +472,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_10"><code>Service</code> context</h3>
+<h3 id="page_section_11"><code>Service</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -508,7 +519,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_11"><code>Order</code> context</h3>
+<h3 id="page_section_12"><code>Order</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -575,7 +586,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_12"><code>Contract</code> context</h3>
+<h3 id="page_section_13"><code>Contract</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -614,7 +625,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_13"><code>Product</code> context</h3>
+<h3 id="page_section_14"><code>Product</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -706,7 +717,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_14"><code>Invoice</code> context</h3>
+<h3 id="page_section_15"><code>Invoice</code> context</h3>
 <table>
 <thead>
 <tr>
@@ -903,7 +914,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="page_section_15"><code>Payment</code> context</h3>
+<h3 id="page_section_16"><code>Payment</code> context</h3>
 <table>
 <thead>
 <tr>

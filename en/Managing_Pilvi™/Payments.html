@@ -98,7 +98,10 @@
 <p><a href="#page_section_2">Stripe</a></p>
 </li>
 <li>
-<p><a href="#page_section_3">Invoice</a></p>
+<p><a href="#page_section_3">Paytrail</a></p>
+</li>
+<li>
+<p><a href="#page_section_4">Invoice</a></p>
 </li>
 </ul>
 </li>
@@ -110,6 +113,9 @@
 <a href="https://stripe.com" class="Link--external">Stripe</a>
 </li>
 <li>Invoice</li>
+<li>
+<a href="https://www.paytrail.com/en" class="Link--external">Paytrail</a>
+</li>
 </ul>
 <h2 id="page_section_2">Stripe</h2>
 <p>Stripe allows you to receive payments via credit cards.</p>
@@ -126,7 +132,18 @@
 <p>You can disconnect your Stripe account from Pilvi™ at anytime.
 Note: after this you will not receive any more payments from Pilvi™.</p>
 <p>Payment to Stripe will be done in the base currency of the Platform by default. For the Pilvi SaaS offering this currency is EUR. It can be changed by <code>STRIPE_PAYMENT_CURRENCY</code></p>
-<h2 id="page_section_3">Invoice</h2>
+<h2 id="page_section_3">Paytrail</h2>
+<p>Paytrail allows your Customers to pay with ePayments to all Finnish banks, or using credit/debit cards. See full list of Paytrail's payment methods <a href="https://www.paytrail.com/en/payment-gateway" class="Link--external">here</a>.</p>
+<p>To enable Paytrail as a payment method, you'll need to enable the payment method from the Settings.</p>
+<p>In Manager</p>
+<blockquote>
+<ol>
+<li>Go to Settings.</li>
+<li>Enable <code>PAYMENT_METHOD_PAYTRAIL_ENABLED</code>.</li>
+<li>Fill in the <code>PAYTRAIL_MERCHANT_ID</code> and <code>PAYTRAIL_MERCHANT_TOKEN</code> of your Paytrail account.</li>
+</ol>
+</blockquote>
+<h2 id="page_section_4">Invoice</h2>
 <p>Invoice allows your Customers to make orders and pay them at a later date.</p>
 <p>To enable Invoice as a payment method, you'll need to enable the payment method from the Settings.</p>
 <p>In Manager</p>
