@@ -214,6 +214,22 @@
 <td>INVOICE_PAYMENT_FAILED</td>
 <td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
 </tr>
+<tr>
+<td>INVOICE</td>
+<td><code>User</code> <code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
+</tr>
+<tr>
+<td>INVOICE_CREATED</td>
+<td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
+</tr>
+<tr>
+<td>INVOICE_REMINDER</td>
+<td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
+</tr>
+<tr>
+<td>INVOICE_OVERDUE</td>
+<td><code>Profile</code> <code>Invoice</code> <code>Payment</code></td>
+</tr>
 </tbody>
 </table>
 <h3 id="page_section_5">System templates</h3>
@@ -344,6 +360,16 @@
 <td>expiringservices</td>
 <td>List of expiring services. Contains same variables as Service context</td>
 </tr>
+<tr>
+<td>INVOICE_REMINDER</td>
+<td>numberofdaysbeforeduedate</td>
+<td>Days before Invoice Due Date</td>
+</tr>
+<tr>
+<td>INVOICE_OVERDUE</td>
+<td>numberofdaysafterduedate</td>
+<td>Days after Invoice Due Date</td>
+</tr>
 </tbody>
 </table>
 <h3 id="page_section_9"><code>User</code> context</h3>
@@ -387,16 +413,16 @@
 </thead>
 <tbody>
 <tr>
-<td>profile.name</td>
-<td>Profile Name</td>
-</tr>
-<tr>
 <td>profile.id</td>
 <td>Profile Id</td>
 </tr>
 <tr>
 <td>profile.no</td>
 <td>Profile No</td>
+</tr>
+<tr>
+<td>profile.name</td>
+<td>Profile Name</td>
 </tr>
 <tr>
 <td>profile.balance</td>
@@ -482,16 +508,16 @@
 </thead>
 <tbody>
 <tr>
-<td>service.name</td>
-<td>Service Name</td>
-</tr>
-<tr>
 <td>service.id</td>
 <td>Service Id</td>
 </tr>
 <tr>
 <td>service.no</td>
 <td>Service No</td>
+</tr>
+<tr>
+<td>service.name</td>
+<td>Service Name</td>
 </tr>
 <tr>
 <td>service.url</td>
@@ -565,10 +591,6 @@
 <td>Order VAT Amount</td>
 </tr>
 <tr>
-<td>order.paymentmethod</td>
-<td>Payment method</td>
-</tr>
-<tr>
 <td>order.reference</td>
 <td>Customer reference</td>
 </tr>
@@ -636,16 +658,6 @@
 </thead>
 <tbody>
 <tr>
-<td>product.name</td>
-<td>Product Name</td>
-<td>string</td>
-</tr>
-<tr>
-<td>product.plan</td>
-<td>Product Plan</td>
-<td>string</td>
-</tr>
-<tr>
 <td>product.id</td>
 <td>Product Id</td>
 <td>number</td>
@@ -654,6 +666,16 @@
 <td>product.no</td>
 <td>Product Number</td>
 <td>number</td>
+</tr>
+<tr>
+<td>product.name</td>
+<td>Product Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>product.plan</td>
+<td>Product Plan</td>
+<td>string</td>
 </tr>
 <tr>
 <td>product.image.url</td>
@@ -749,12 +771,12 @@
 </tr>
 <tr>
 <td>invoice.sum</td>
-<td>Invoice sum</td>
+<td>Invoice Sum In Base Currency</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>invoice.sumvat</td>
-<td>Invoice Sum of VAT</td>
+<td>Invoice Sum With VAT In Currency</td>
 <td>0.00</td>
 </tr>
 <tr>
@@ -764,7 +786,7 @@
 </tr>
 <tr>
 <td>invoice.sumopenvat</td>
-<td>Invoice VAT Open</td>
+<td>Invoice Sum Open With VAT In Base Currency</td>
 <td>0.00</td>
 </tr>
 <tr>
@@ -781,6 +803,11 @@
 <td>invoice.items[].id</td>
 <td>InvoiceItem Id</td>
 <td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].name</td>
+<td>Product name from invoiced service created</td>
+<td>string</td>
 </tr>
 <tr>
 <td>invoice.items[].description</td>
@@ -831,6 +858,16 @@
 <td>invoice.items[].vatamount</td>
 <td>InvoiceItem VAT Amount</td>
 <td>number</td>
+</tr>
+<tr>
+<td>invoice.items[].billingperiodstart</td>
+<td>Billing Period Start Date</td>
+<td>date</td>
+</tr>
+<tr>
+<td>invoice.items[].billingperiodend</td>
+<td>Billing Period End Date</td>
+<td>date</td>
 </tr>
 <tr>
 <td>invoice.address.seller.street</td>
@@ -908,9 +945,19 @@
 <td>string</td>
 </tr>
 <tr>
+<td>invoice.contract</td>
+<td>If invoice is created from Contract. Contains same variables as Contract context</td>
+<td></td>
+</tr>
+<tr>
 <td>invoice.payments</td>
 <td>List of Invoice Payments.  Contains same variables as Payment context</td>
 <td>list</td>
+</tr>
+<tr>
+<td>invoice.url</td>
+<td>Url to invoice in console</td>
+<td>url</td>
 </tr>
 </tbody>
 </table>

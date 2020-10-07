@@ -157,6 +157,18 @@ You can of course alter it as you see fit.</p>
 <td>Send email &quot;Invoice payment failed&quot;</td>
 <td>Notify the Customer when the payment couldn't be completed.</td>
 </tr>
+<tr>
+<td>Send email &quot;Invoice created&quot;</td>
+<td>Notify the Customer when an Invoice is created</td>
+</tr>
+<tr>
+<td>Send email &quot;Invoice reminder&quot;</td>
+<td>Notify the Customer when the Invoice is unpaid and the Invoice due date is approaching</td>
+</tr>
+<tr>
+<td>Send email &quot;Invoice overdue&quot;</td>
+<td>Notify the Customer when the Invoice is overdue</td>
+</tr>
 </tbody>
 </table>
 <h1 id="page_section_2">Conditions</h1>
@@ -250,6 +262,21 @@ You can of course alter it as you see fit.</p>
 <td>Immediately</td>
 <td></td>
 </tr>
+<tr>
+<td>INVOICE_CREATED</td>
+<td>Immediately</td>
+<td></td>
+</tr>
+<tr>
+<td>INVOICE_DUE_IN</td>
+<td>Scheduled</td>
+<td>NUMBER</td>
+</tr>
+<tr>
+<td>INVOICE_DUE_FOR</td>
+<td>Scheduled</td>
+<td>NUMBER</td>
+</tr>
 </tbody>
 </table>
 <h2 id="page_section_4">Secondary conditions</h2>
@@ -271,19 +298,23 @@ You can of course alter it as you see fit.</p>
 <td></td>
 </tr>
 <tr>
-<td>SERVICE_EXPIRES_IN_DAYS</td>
-<td></td>
-</tr>
-<tr>
-<td>SERVICE_HAS_BEEN_EXPIRED_FOR_DAYS</td>
-<td></td>
-</tr>
-<tr>
 <td>RECURRING_PAYMENT_INFORMATION_IS_FILLED</td>
 <td></td>
 </tr>
 <tr>
 <td>RECURRING_PAYMENT_INFORMATION_IS_NOT_FILLED</td>
+<td></td>
+</tr>
+<tr>
+<td>INVOICE_SUM_TOTAL_IS_NOT_ZERO</td>
+<td></td>
+</tr>
+<tr>
+<td>INVOICE_SUM_OPEN_IS_NOT_ZERO</td>
+<td></td>
+</tr>
+<tr>
+<td>INVOICE_DELIVERY_METHOD_IS_NONE</td>
 <td></td>
 </tr>
 </tbody>
