@@ -150,9 +150,28 @@
 </div>
 <h2 id="page_section_2">Syntax</h2>
 <p>Message templates use the <a href="https://mustache.github.io/mustache.5.html" class="Link--external">Mustache syntax</a></p>
-<p>Variables are used by wrapping them in double-braces, e.g. {{company.name}}. See list of available variables below.</p>
-<p><strong>Note</strong> properties[].value needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
-<p>Variable availability varies messsage template types. Available contexts define which variables are available.</p>
+<p>Variables are used by wrapping them in double-braces</p>
+<pre><code>&lt;p&gt;{{company.name}}&lt;/p&gt;
+</code></pre>
+<p>List variables are indicated with square brackets [] at the end of variable name. For ex. a list variable of profile's properties is <strong>profile.properties[]</strong></p>
+<p>You can loop through the list variable by using a Section. Section starts with a <code>#</code> and ends with a <code>/</code>.</p>
+<pre><code>&lt;ul&gt;
+{{#profile.properties}}
+    &lt;li&gt;{{label}}: {{value}}&lt;/li&gt;
+{{/profile.properties}}
+&lt;/ul&gt;
+</code></pre>
+<p>If a value isn't available for a certain variable, you can use inverted section to render a section instead.</p>
+<p>In the example below, row 3 is rendered if the variable <code>value</code> contains a value. If not, then row 4 is rendered instead:</p>
+<pre><code>1: &lt;ul&gt;
+2: {{#profile.properties}}
+3:      {{#value}}&lt;li&gt;{{label}}: {{{value}}}&lt;/li&gt;{{/value}}
+4:      {{^value}}&lt;li&gt;{{label}}: Placeholder text&lt;/li&gt;{{/value}}
+5: {{/profile.properties}}
+6: &lt;/ul&gt;
+</code></pre>
+<p><strong>Note</strong> <strong>properties[].value</strong> needs to be wrapped in triple-braces so the HTML is properly rendered for all Property value types.</p>
+<p>Variable availability varies between messsage template types. Available contexts define which variables are available.</p>
 <h2 id="page_section_3">Localization</h2>
 <p>Each template can be localized for available languages.</p>
 <p>The locale in which the emails are sent, are chosen dynamically based on the</p>
