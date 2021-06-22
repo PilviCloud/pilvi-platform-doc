@@ -119,6 +119,8 @@ components:
           $ref: "#/components/schemas/ContentProduct"
         invoice:
           $ref: "#/components/schemas/ContentInvoice"
+        quote:
+          $ref: '#/components/schemas/ContentQuote'
     ContentUser:
       type: object
       properties:
@@ -318,7 +320,26 @@ components:
            FILE_BASE64:
             value: ["filename1.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ=","filename2.txt/RXhhbXBsZSBGaWxlIENvbnRlbnQ="]
             summary: Base64 formatted file data. Base64 encoded file data is prepended with `filename/`.
-
+        price:
+          type: object
+          description: Available only, when quote for service
+          properties:
+            amount:
+              type: double
+              description: Quote price
+              example: 5.90
+            amount_original:
+              type: double
+              description: Original property price
+              example: 6.90
+            period:
+              type: interval
+              description: ISO 8601 formatted billing period. 
+              example: P3M
+            valid_till:
+              type: string
+            format: date-time
+            description: ISO 8601 formatted timestamp of price valid till. In UTC.
     ContentProduct:
       type: object
       properties:
@@ -564,3 +585,43 @@ components:
           type: string
           format: date-time
           description: ISO 8601 formatted timestamp of creation. In UTC.
+    ContentQuote:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Pilvi Platform Quote ID. Unique within the environment.
+          example: 1
+        no:
+          type: integer
+          description: Pilvi Platform Quote Number. Unique within the Site.
+          example: 1
+        profile:
+          $ref: "#/components/schemas/ContentProfile"
+        created_by:
+          $ref: "#/components/schemas/ContentUser"
+        status:
+          type: string
+          enum:
+          - DRAFT - Seller created Quote that has not yet been sent to Customer.
+          - NEW - Customer has sent a quote request that needs to be processed.
+          - OPEN - Quote request has been sent to Customer.
+          - REJECTED - Customer has rejected the Quote.
+          - EXPIRED - Customer has not given reply before the expire date.
+          - APPROVED - Customer has approved the Quote.
+        services:
+          type: array
+          items:
+            $ref: "#/components/schemas/ContentService"
+        expires:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of expiration. In UTC.
+        created:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of creation. In UTC.
+        updated:
+          type: string
+          format: date-time
+          description: ISO 8601 formatted timestamp of update. In UTC.

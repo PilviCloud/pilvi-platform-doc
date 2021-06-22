@@ -142,6 +142,9 @@
 <li>
 <p><a href="#page_section_16"><code>Payment</code> context</a></p>
 </li>
+<li>
+<p><a href="#page_section_17"><code>Quote</code> context</a></p>
+</li>
 </ul>
 </li>
 </ul>
@@ -1042,6 +1045,183 @@
 <tr>
 <td>payment.message</td>
 <td>Payment message, if exists. Can contain additional details of the payment for ex. when payment needs customer authentication or payment has failed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="page_section_17"><code>Quote</code> context</h3>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Description / Value source</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quote.id</td>
+<td>Quote Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>quote.no</td>
+<td>Quote Number</td>
+<td>number</td>
+</tr>
+<tr>
+<td>quote.user</td>
+<td>Details of the user who submitted Quote. Contains same variables as User context</td>
+<td></td>
+</tr>
+<tr>
+<td>quote.services[].name</td>
+<td>Quote Service Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].id</td>
+<td>Quote Service Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>quote.services[].no</td>
+<td>Quote Service Number</td>
+<td>number</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].value</td>
+<td>Quote Service Property Value</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].name</td>
+<td>Quote Service Property Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].label</td>
+<td>Quote Service Property Label</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.amount</td>
+<td>Quote Service Property Price Value (price in Quote price period)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.amountoriginal</td>
+<td>Property Price Original Value (price in Quote price period)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.period</td>
+<td>Quote Service Property Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.validtill</td>
+<td>Quote Service Property Price Valid till</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.services[].url</td>
+<td>Quote Service Page URL</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].expiredate</td>
+<td>Quote Service Expiration Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.services[].product</td>
+<td>Contains same variables as Product context</td>
+<td></td>
+</tr>
+<tr>
+<td>quote.services[].price.amount</td>
+<td>Quote Service Price (price in Quote price period)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].price.amountoriginal</td>
+<td>Product Original Price (price in Quote price period)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].price.priceperiod</td>
+<td>Quote Service Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>quote.services[].price.validtill</td>
+<td>Quote Service Price Valid Till Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.services[].price.billingprice</td>
+<td>Quote Service Price including properties price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].price.billingpriceoriginal</td>
+<td>Service Original Price  including properties price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].price.billingperiod</td>
+<td>Quote Service Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>quote.status</td>
+<td>Quote Status</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.expires</td>
+<td>Quote Expiration Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.created</td>
+<td>Quote Created Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.udated</td>
+<td>Quote Updated Date</td>
+<td>date, localized</td>
+</tr>
+<tr>
+<td>quote.total</td>
+<td>Quote Services Total Price.</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.totalwithvat</td>
+<td>Quote Services Total Price with VAT.</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.totaloriginal</td>
+<td>Quote Services Original Total Price.</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.totaloriginalwithvat</td>
+<td>Quote services Original Total Price with VAT.</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.vat.rate</td>
+<td>Quote VAT Rate</td>
+<td></td>
+</tr>
+<tr>
+<td>quote.vat.amount</td>
+<td>Quote VAT Amount</td>
+<td></td>
 </tr>
 </tbody>
 </table>
