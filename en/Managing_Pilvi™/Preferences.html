@@ -200,6 +200,11 @@
 <td>STRING</td>
 <td>Default locale for the Site to use for root URL. Supported values: fi_FI, en_US. Default en_US.</td>
 </tr>
+<tr>
+<td>DEFAULT_TITLE_TAG_POSTFIX</td>
+<td>STRING</td>
+<td>Default Title tag postfix. Default <code>- {{site.name}}</code></td>
+</tr>
 </tbody>
 </table>
 <h2 id="page_section_3">User Authentication and Registration</h2>
@@ -231,6 +236,16 @@
 <td>SITE_REGISTRATION_BUSINESS_USER_DEFAULT</td>
 <td>BOOLEAN</td>
 <td>Default to registering as a business user.</td>
+</tr>
+<tr>
+<td>SITE_REGISTRATION_TELEPHONE_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Ask telephone during registration. Default false</td>
+</tr>
+<tr>
+<td>SITE_REGISTRATION_QUOTE_ONLY_TELEPHONE_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Ask telephone only on quotations. Default false</td>
 </tr>
 <tr>
 <td>AUTH_PROVIDER_LOCAL_ENABLED</td>
@@ -345,6 +360,11 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>FRONTEND_PROFILE_SELECTOR_AFTER_LOGIN_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Show Profile selector modal after login</td>
+</tr>
 <tr>
 <td>FRONTEND_SHOP_CATEGORY_PRODUCT_DEFAULT_ORDER</td>
 <td>STRING</td>
