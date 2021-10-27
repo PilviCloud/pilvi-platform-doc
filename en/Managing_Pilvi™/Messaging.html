@@ -453,6 +453,10 @@
 <td>user.lastname</td>
 <td>User Lastname</td>
 </tr>
+<tr>
+<td>user.telephone</td>
+<td>User Telephone</td>
+</tr>
 </tbody>
 </table>
 <h3 id="page_section_10"><code>Profile</code> context</h3>
@@ -592,8 +596,40 @@
 <td>Service Property Value</td>
 </tr>
 <tr>
+<td>service.properties[].price.amount</td>
+<td>Service Property Price (price in base price period)</td>
+</tr>
+<tr>
+<td>service.properties[].price.priceperiod</td>
+<td>Service Property Base Price Period</td>
+</tr>
+<tr>
+<td>service.properties[].price.billingprice</td>
+<td>Service Property Billing Price (price in service billing period)</td>
+</tr>
+<tr>
+<td>service.properties[].price.billingperiod</td>
+<td>Service Property Billing Period</td>
+</tr>
+<tr>
 <td>service.product</td>
 <td>The Product of the Service. Contains same variables as Product context</td>
+</tr>
+<tr>
+<td>service.price.amount</td>
+<td>Service Product Price (price in base price period)</td>
+</tr>
+<tr>
+<td>service.price.priceperiod</td>
+<td>Service Product Base Price Period</td>
+</tr>
+<tr>
+<td>service.price.billingprice</td>
+<td>Service Billing Price (price in service billing period)</td>
+</tr>
+<tr>
+<td>service.price.billingperiod</td>
+<td>Service Billing Period</td>
 </tr>
 </tbody>
 </table>
@@ -755,6 +791,16 @@
 <td>string</td>
 </tr>
 <tr>
+<td>product.properties[].price.amount</td>
+<td>Product Property Price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>product.properties[].price.priceperiod</td>
+<td>Product Property Base Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
 <td>product.billingperiod</td>
 <td>Product Billing Period</td>
 <td>1 month</td>
@@ -781,7 +827,7 @@
 </tr>
 <tr>
 <td>product.priceperiod</td>
-<td>Product Price Period</td>
+<td>Product Base Price Period</td>
 <td>1 month</td>
 </tr>
 <tr>
@@ -1105,17 +1151,32 @@
 </tr>
 <tr>
 <td>quote.services[].properties[].price.amount</td>
-<td>Quote Service Property Price Value (price in Quote price period)</td>
+<td>Quote Service Property Price Value (price in Quote base price period)</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].properties[].price.amountoriginal</td>
-<td>Property Price Original Value (price in Quote price period)</td>
+<td>Property Price Original Value (price in Quote base price period)</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].properties[].price.period</td>
-<td>Quote Service Property Price Period</td>
+<td>Quote Service Property Base Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.billingprice</td>
+<td>Quote Service Property Billing Price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.billingpriceoriginal</td>
+<td>Quote Service Property Original Billing Price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].price.billingperiod</td>
+<td>Quote Service Property Billing Period</td>
 <td>1 month</td>
 </tr>
 <tr>
@@ -1140,17 +1201,17 @@
 </tr>
 <tr>
 <td>quote.services[].price.amount</td>
-<td>Quote Service Price (price in Quote price period)</td>
+<td>Quote Service Price (price in Quote base price period)</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].price.amountoriginal</td>
-<td>Product Original Price (price in Quote price period)</td>
+<td>Quote Service Original Price (price in Quote base price period)</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].price.priceperiod</td>
-<td>Quote Service Price Period</td>
+<td>Quote Service Base Price Period</td>
 <td>1 month</td>
 </tr>
 <tr>
@@ -1160,17 +1221,17 @@
 </tr>
 <tr>
 <td>quote.services[].price.billingprice</td>
-<td>Quote Service Price including properties price</td>
+<td>Quote Service Billing Price</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].price.billingpriceoriginal</td>
-<td>Service Original Price  including properties price</td>
+<td>Service Original Billing Price</td>
 <td>0.00</td>
 </tr>
 <tr>
 <td>quote.services[].price.billingperiod</td>
-<td>Quote Service Price Period</td>
+<td>Quote Service Billing Period</td>
 <td>1 month</td>
 </tr>
 <tr>
