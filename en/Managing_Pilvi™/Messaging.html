@@ -69,7 +69,7 @@
                 
                                     <div class="PoweredBy">
                         <hr/>
-                        © 2020 Pilvi Cloud Company Ltd                    </div>
+                        © 2023 Pilvi Cloud Company Ltd                    </div>
                         </div>
     </aside>
     <div class="Columns__right Columns__right--full">
@@ -742,6 +742,21 @@
 <td>0.00</td>
 </tr>
 <tr>
+<td>order.servicefeeamount</td>
+<td>Service Fee amount</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.servicefeepercent</td>
+<td>Service Fee percent if type is percent</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.servicefeedescription</td>
+<td>Service Fee description</td>
+<td>string</td>
+</tr>
+<tr>
 <td>order.balanceconsumed</td>
 <td>The amount of account balance consumed</td>
 <td>0.00</td>
@@ -777,19 +792,119 @@
 <td>string</td>
 </tr>
 <tr>
+<td>order.invoice</td>
+<td>Invoice from Order. Contains same variables as Invoice context</td>
+<td></td>
+</tr>
+<tr>
 <td>order.user</td>
 <td>Details of the user who submitted Order. Contains same variables as User context</td>
 <td></td>
 </tr>
 <tr>
-<td>order.products</td>
-<td>List of Products in Order. Contains same variables as Product context</td>
+<td>order.products[]</td>
+<td>List of Products in Order.</td>
 <td></td>
 </tr>
 <tr>
-<td>order.invoice</td>
-<td>Invoice from Order. Contains same variables as Invoice context</td>
-<td></td>
+<td>order.products[].id</td>
+<td>Product Id</td>
+<td>number</td>
+</tr>
+<tr>
+<td>order.products[].no</td>
+<td>Product Number</td>
+<td>number</td>
+</tr>
+<tr>
+<td>order.products[].name</td>
+<td>Product Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].plan</td>
+<td>Product Plan</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].image.url</td>
+<td>Product Image URL</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].productgroup.name</td>
+<td>Product Group Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].properties[].name</td>
+<td>Product Property Name</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].properties[].label</td>
+<td>Product Property Label</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].properties[].value</td>
+<td>Product Property Value</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].properties[].price.amount</td>
+<td>Product Property Price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].properties[].price.priceperiod</td>
+<td>Product Property Base Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>order.products[].billingperiod</td>
+<td>Product Billing Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>order.products[].billingprice</td>
+<td>Product Billing Price (price * billingperiod)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].billingpricewithvat</td>
+<td>Product Billing VAT Price (price * billingperiod)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].trialperiod</td>
+<td>Product Trial Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>order.products[].price</td>
+<td>Product Price (price in product price interval)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].priceperiod</td>
+<td>Product Base Price Period</td>
+<td>1 month</td>
+</tr>
+<tr>
+<td>order.products[].pricewithvat</td>
+<td>Product VAT Price</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].fullprice</td>
+<td>Product Full Price (price in product price interval)</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>order.products[].fullpricewithvat</td>
+<td>Product Full VAT Price</td>
+<td>0.00</td>
 </tr>
 </tbody>
 </table>

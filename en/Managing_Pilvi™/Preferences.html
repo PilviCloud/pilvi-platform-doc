@@ -69,7 +69,7 @@
                 
                                     <div class="PoweredBy">
                         <hr/>
-                        © 2020 Pilvi Cloud Company Ltd                    </div>
+                        © 2023 Pilvi Cloud Company Ltd                    </div>
                         </div>
     </aside>
     <div class="Columns__right Columns__right--full">
@@ -205,6 +205,11 @@
 <td>STRING</td>
 <td>Default Title tag postfix. Default <code>- {{site.name}}</code></td>
 </tr>
+<tr>
+<td>SITE_FAVICON_URL</td>
+<td>STRING</td>
+<td>URL of image to use as favicon.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="page_section_3">User Authentication and Registration</h2>
@@ -325,6 +330,11 @@
 <td>SERVICE_EXPIRATION_DELAY_IN_DAYS</td>
 <td>NUMBER</td>
 <td>The offset of days for setting the Service in to EXPIRED state, after the expire time has been reached. Default 0, Service is set to EXPIRED state on the date of the expiration.</td>
+</tr>
+<tr>
+<td>SELF_SERVICE_CANCEL_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Allow customers to cancel services by themselves. Default true.</td>
 </tr>
 </tbody>
 </table>
