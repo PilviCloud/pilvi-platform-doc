@@ -622,6 +622,21 @@
 <td>Profile Property Value</td>
 <td>string</td>
 </tr>
+<tr>
+<td>profile.properties[].unit</td>
+<td>Profile Property Unit</td>
+<td>string</td>
+</tr>
+<tr>
+<td>profile.mrr</td>
+<td>Profile Monthly Recurring Revenue</td>
+<td>0.00</td>
+</tr>
+<tr>
+<td>profile.extras.active_services_count</td>
+<td>Active Services count</td>
+<td>0</td>
+</tr>
 </tbody>
 </table>
 <h3 id="page_section_11"><code>Service</code> context</h3>
@@ -680,6 +695,11 @@
 <td>string</td>
 </tr>
 <tr>
+<td>service.properties[].unit</td>
+<td>Service Property Unit</td>
+<td>string</td>
+</tr>
+<tr>
 <td>service.properties[].price.amount</td>
 <td>Service Property Price (price in base price period)</td>
 <td>0.00</td>
@@ -723,6 +743,11 @@
 <td>service.price.billingperiod</td>
 <td>Service Billing Period</td>
 <td>1 month</td>
+</tr>
+<tr>
+<td>service.mrr</td>
+<td>Service Monthly Recurring Revenue</td>
+<td>0.00</td>
 </tr>
 </tbody>
 </table>
@@ -869,6 +894,11 @@
 <tr>
 <td>order.products[].properties[].value</td>
 <td>Product Property Value</td>
+<td>string</td>
+</tr>
+<tr>
+<td>order.products[].properties[].unit</td>
+<td>Product Property Unit</td>
 <td>string</td>
 </tr>
 <tr>
@@ -1088,6 +1118,11 @@
 <tr>
 <td>product.properties[].value</td>
 <td>Product Property Value</td>
+<td>string</td>
+</tr>
+<tr>
+<td>product.properties[].unit</td>
+<td>Product Property Unit</td>
 <td>string</td>
 </tr>
 <tr>
@@ -1455,18 +1490,23 @@
 <td>number</td>
 </tr>
 <tr>
-<td>quote.services[].properties[].value</td>
-<td>Quote Service Property Value</td>
-<td>string</td>
-</tr>
-<tr>
 <td>quote.services[].properties[].name</td>
 <td>Quote Service Property Name</td>
 <td>string</td>
 </tr>
 <tr>
+<td>quote.services[].properties[].value</td>
+<td>Quote Service Property Value</td>
+<td>string</td>
+</tr>
+<tr>
 <td>quote.services[].properties[].label</td>
 <td>Quote Service Property Label</td>
+<td>string</td>
+</tr>
+<tr>
+<td>quote.services[].properties[].unit</td>
+<td>Quote Service Property Unit</td>
 <td>string</td>
 </tr>
 <tr>
