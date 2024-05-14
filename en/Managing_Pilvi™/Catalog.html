@@ -213,7 +213,7 @@
 </table>
 <h2 id="page_section_9">Importing Excel Files</h2>
 <p>Products can be imported from an Excel file. The file must be in Excel 97 - 2003 (.XLS) format, and contain 15 columns described below. The data must begin from <strong>row 2</strong>.</p>
-<p>Download template file <a href="../../files/product_import_template.xls">here</a></p>
+<p>Download template file <a href="../../files/product_import_template_v2_20240515.xls">here</a></p>
 <p><strong>Excel File Layout</strong></p>
 <table>
 <thead>
@@ -278,9 +278,9 @@
 <td>API</td>
 <td>optional</td>
 <td>optional</td>
-<td>PAITA</td>
-<td>PAITA</td>
-<td>Possible values: <code>PAITA</code>, <code>EMAIL</code></td>
+<td>NONE</td>
+<td>NONE</td>
+<td>Possible values: <code>EMAIL</code>, <code>PAITA</code>, <code>NONE</code></td>
 </tr>
 <tr>
 <td>7</td>
@@ -311,24 +311,42 @@
 </tr>
 <tr>
 <td>10</td>
-<td>Billing interval min</td>
+<td>Billing intervals</td>
 <td>optional</td>
 <td>optional</td>
 <td></td>
 <td>P1M</td>
-<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+<td>Comma separated list of ISO 8601 Durations. Min: <code>P14D</code> Max: <code>P10Y</code></td>
 </tr>
 <tr>
 <td>11</td>
-<td>Billing interval max</td>
+<td>Property <code>product.users</code> Price</td>
 <td>optional</td>
 <td>optional</td>
 <td></td>
-<td>P1Y</td>
-<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+<td>5.5</td>
+<td>Decimal number, no currency sign</td>
 </tr>
 <tr>
 <td>12</td>
+<td>Property <code>product.licenses</code> Price</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td>5.5</td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Property <code>product.units</code> Price</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td>5.5</td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>14</td>
 <td>Trial period (days)</td>
 <td>optional</td>
 <td>optional</td>
@@ -337,7 +355,7 @@
 <td>Min: <code>0</code> Max: <code>90</code></td>
 </tr>
 <tr>
-<td>13</td>
+<td>15</td>
 <td>Region</td>
 <td>optional</td>
 <td>optional</td>
@@ -346,8 +364,8 @@
 <td></td>
 </tr>
 <tr>
-<td>14</td>
-<td>Brand</td>
+<td>16</td>
+<td>Brand name</td>
 <td>optional</td>
 <td>optional</td>
 <td></td>
@@ -355,13 +373,139 @@
 <td></td>
 </tr>
 <tr>
-<td>15</td>
+<td>17</td>
+<td>Categories</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td>category-1,category-2</td>
+<td>Comma separated list of the category slugs</td>
+</tr>
+<tr>
+<td>18</td>
 <td>Image URL</td>
 <td>optional</td>
 <td>optional</td>
 <td></td>
 <td>http://www.myshop.fi/pictures/apic.png</td>
 <td></td>
+</tr>
+<tr>
+<td>19</td>
+<td>Property Vendor SKU</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td>Price variation interval</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td>Price variation</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td>5.5</td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Property <code>product.users</code> Price variation interval</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+</tr>
+<tr>
+<td>23</td>
+<td>Property <code>product.users</code> Price variation</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Property <code>product.licenses</code> Price variation interval</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+</tr>
+<tr>
+<td>25</td>
+<td>Property <code>product.licenses</code> Price variation</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Property <code>product.units</code> Price variation interval</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>ISO 8601 Duration. Min: <code>P14D</code> Max: <code>P10Y</code></td>
+</tr>
+<tr>
+<td>27</td>
+<td>Property <code>product.units</code> Price variation</td>
+<td>optional</td>
+<td>optional</td>
+<td></td>
+<td></td>
+<td>Decimal number, no currency sign</td>
+</tr>
+<tr>
+<td>28</td>
+<td>CTA: Is Purchasable</td>
+<td>optional</td>
+<td>optional</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>29</td>
+<td>CTA: Is Quotable</td>
+<td>optional</td>
+<td>optional</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>30</td>
+<td>CTA: Is Custom CTA</td>
+<td>optional</td>
+<td>optional</td>
+<td>FALSE</td>
+<td>FALSE</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Price Show</td>
+<td>optional</td>
+<td>optional</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>Boolean</td>
 </tr>
 </tbody>
 </table>
