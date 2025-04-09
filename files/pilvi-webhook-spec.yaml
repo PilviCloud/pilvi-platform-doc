@@ -472,6 +472,14 @@ components:
           format: float
           description: Total amount of VAT (with multiplier).
           example: 0.966
+        billing_period_start:
+          type: string
+          format: date
+          description: ISO 8601 formatted date of billing period start date. In UTC.
+        billing_period_end:
+          type: string
+          format: date
+          description: ISO 8601 formatted date of billing period start date. In UTC.
     InvoicePayments:
       type: object
       properties:
