@@ -383,6 +383,41 @@
 <td>STRING</td>
 <td>Netvisor product code used when exporting Invoicing Fee invoice rows.</td>
 </tr>
+<tr>
+<td>FINANCIAL_MANAGEMENT_INTEGRATION_NETVISOR_PRODUCT_CODE_REMINDER_FEE</td>
+<td>STRING</td>
+<td>Netvisor product code used when exporting Reminder Fee invoice rows.</td>
+</tr>
+<tr>
+<td>REMINDER_FEE_ENABLED</td>
+<td>BOOLEAN</td>
+<td>Enable automatic reminder-fee generation. Default false.</td>
+</tr>
+<tr>
+<td>OVERDUE_CHARGES_START_DATE</td>
+<td>STRING</td>
+<td>Earliest invoice issue date from which reminder fees may be generated. Leave empty to keep generation disabled.</td>
+</tr>
+<tr>
+<td>REMINDER_FEE_AMOUNT_B2B</td>
+<td>NUMBER</td>
+<td>Reminder-fee amount for business customers. Default 5.</td>
+</tr>
+<tr>
+<td>REMINDER_FEE_AMOUNT_B2C</td>
+<td>NUMBER</td>
+<td>Reminder-fee amount for private customers. Default 5; generated fees are capped at 5.</td>
+</tr>
+<tr>
+<td>REMINDER_FEE_DAYS_B2B</td>
+<td>NUMBER</td>
+<td>Days from the request date before a business-customer reminder fee may be generated. Default 14.</td>
+</tr>
+<tr>
+<td>REMINDER_FEE_DAYS_B2C</td>
+<td>NUMBER</td>
+<td>Days from the request date before a private-customer reminder fee may be generated. Default 14.</td>
+</tr>
 </tbody>
 </table>
 <h2 id="page_section_7">UI and Features</h2>

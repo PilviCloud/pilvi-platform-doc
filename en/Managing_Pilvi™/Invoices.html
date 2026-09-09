@@ -100,6 +100,17 @@
 <li>
 <p><a href="#page_section_3">Invoicing fee rows</a></p>
 </li>
+<li>
+<p><a href="#page_section_4">Reminder fees</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_section_5">Configuration</a></p>
+</li>
+<li>
+<p><a href="#page_section_6">Manager operations</a></p>
+</li>
+</ul>
+</li>
 </ul>    </div>
 </div>
 <h1 id="page_section_1">Invoices in Manager</h1>
@@ -109,13 +120,13 @@
 <p>Typical flow:</p>
 <ol>
 <li>Create usage entries for a Service.</li>
-<li>Review usage rows in the related service billing group scope.</li>
+<li>Review usage rows in the related Contract.</li>
 <li>Create an invoice from selected usage rows or from open usage rows.</li>
 </ol>
 <p>Notes:</p>
 <ul>
-<li>Usage invoicing is validated against service billing group scope.</li>
-<li>Usage rows outside the target service billing group scope are rejected when invoicing.</li>
+<li>Usage invoicing is validated against the selected Contract.</li>
+<li>Usage rows outside the selected Contract are rejected when invoicing.</li>
 <li>Invoiced usage rows are marked as charged.</li>
 </ul>
 <h1 id="page_section_3">Invoicing fee rows</h1>
@@ -129,6 +140,27 @@
 <a href="Preferences.html">Preferences</a>
 </li>
 </ul>
+<h1 id="page_section_4">Reminder fees</h1>
+<p>Reminder fees are managed as overdue-charge records in the related Contract. A reminder fee is created only when all of the following are true:</p>
+<ul>
+<li>the Invoice is a normal service invoice, is overdue, and has been marked as requested by the reminder process;</li>
+<li>the Invoice was created on or after the configured overdue-charge start date;</li>
+<li>the configured delay after the request date has elapsed; and</li>
+<li>no reminder fee has previously been created for that source Invoice.</li>
+</ul>
+<p>The reminder-fee generator runs daily. A reminder fee is created as an open overdue charge and is added to the next regular invoice for the same Contract. It can also be invoiced separately from the Contract detail view.</p>
+<h2 id="page_section_5">Configuration</h2>
+<p>Configure reminder fees per Site before enabling them. See <a href="Preferences.html">Preferences</a> for the available preference values.</p>
+<p>Keep <code>REMINDER_FEE_ENABLED</code> disabled until the start date, amounts, delay periods, reminder process, and (when applicable) Netvisor product code have been verified. If the start date is empty, no reminder fees are generated.</p>
+<p>For private customers, the generated fee is capped at 5.00 and the configured request delay must comply with the applicable statutory requirements.</p>
+<h2 id="page_section_6">Manager operations</h2>
+<p>Open a Contract and select the <strong>Overdue charges</strong> tab to review reminder fees. The tab supports these actions for the selected Contract:</p>
+<ul>
+<li>invoice selected open reminder fees on a separate invoice;</li>
+<li>cancel open reminder fees that must not be billed; and</li>
+<li>re-enable canceled reminder fees when they should become billable again.</li>
+</ul>
+<p>When an invoice containing a billed reminder fee is reimbursed, the reminder fee returns to the open state. It is not canceled automatically. Cancel it explicitly if it should not be billed again; otherwise it can be included on a later invoice.</p>
     </div>
 
         <nav>
